@@ -238,19 +238,20 @@ export default function Home() {
             SEO tools for B2B growth.
           </p>
 
-          <form className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="min-h-12 flex-1 rounded-full border border-white/10 px-5 text-slate-950 outline-none"
-            />
-            <button
-              type="submit"
-              className="min-h-12 rounded-full bg-white px-8 font-semibold text-slate-950 hover:bg-slate-100"
-            >
-              Join Waitlist
-            </button>
-          </form>
+       <div className="mt-8 flex flex-col items-center gap-4">
+  <a
+    href="https://tally.so/r/pbJK9J"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="rounded-full bg-white px-8 py-4 text-base font-semibold text-slate-950 hover:bg-slate-100"
+  >
+    Join Early Access
+  </a>
+
+  <p className="text-sm text-slate-400">
+    Takes less than 1 minute. No spam, just practical B2B SEO templates and tool updates.
+  </p>
+</div>
 
           <p className="mt-4 text-xs text-slate-400">
             No spam. Just practical B2B SEO templates and tool updates.
