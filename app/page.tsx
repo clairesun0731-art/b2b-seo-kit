@@ -142,12 +142,9 @@ export default function Home() {
     Audit Checklist
   </a>
   <a
-    href="#tools"
+    href="#faq"
     className="transition-colors hover:text-slate-900"
   >
-    Tools
-  </a>
-  <a href="#faq" className="transition-colors hover:text-slate-900">
     FAQ
   </a>
 </nav>

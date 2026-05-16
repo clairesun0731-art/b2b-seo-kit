@@ -271,11 +271,11 @@ export default function B2BSEOKitPage() {
   </span>
 </a>
             <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
-              <a href="#tools-included" className="hover:text-slate-900 transition-colors">
-                Tools
+              <a href="/b2b-seo-kit/" className="text-slate-900 font-medium">
+                SEO Toolkit
               </a>
-              <a href="#workflow" className="hover:text-slate-900 transition-colors">
-                Workflow
+              <a href="/b2b-seo-audit/" className="hover:text-slate-900 transition-colors">
+                Audit Checklist
               </a>
               <a href="#faq" className="hover:text-slate-900 transition-colors">
                 FAQ
@@ -287,7 +287,7 @@ export default function B2BSEOKitPage() {
               rel="noopener noreferrer"
               className="text-sm font-medium bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition-colors"
             >
-              Get the Free Toolkit
+              Get Free Access
             </a>
           </div>
         </header>

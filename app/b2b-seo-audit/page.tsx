@@ -306,8 +306,11 @@ export default function B2BSEOAuditPage() {
         <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2 group">
-              <span className="text-[15px] font-semibold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">
-                B2B SEO Kit
+              <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-600 text-[10px] font-bold text-white shadow-sm transition-colors group-hover:bg-blue-700">
+                B2B
+              </span>
+              <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
+                SEO Kit
               </span>
             </a>
             <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
@@ -327,7 +330,7 @@ export default function B2BSEOAuditPage() {
               rel="noopener noreferrer"
               className="text-sm font-medium bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition-colors"
             >
-              Get the Free Toolkit
+              Get Free Access
             </a>
           </div>
         </header>
