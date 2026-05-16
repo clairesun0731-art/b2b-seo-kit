@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       "Use B2B SEO Kit to audit B2B websites, plan keyword research, create content briefs, optimize product pages, and turn organic traffic into qualified leads.",
     url: "https://www.b2bseokit.com/b2b-seo-kit/",
     siteName: "B2B SEO Kit",
+    images: ["/logo.webp"],
     type: "website",
   },
   twitter: {
@@ -263,13 +264,17 @@ export default function B2BSEOKitPage() {
         <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
             <a href="/" className="group flex items-center gap-2">
-  <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-600 text-[10px] font-bold text-white shadow-sm transition-colors group-hover:bg-blue-700">
-    B2B
-  </span>
-  <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
-    SEO Kit
-  </span>
-</a>
+              <img
+                src="/logo-square.webp"
+                alt="B2B"
+                width={32}
+                height={32}
+                className="h-8 w-8 rounded-xl object-contain"
+              />
+              <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
+                SEO Kit
+              </span>
+            </a>
             <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
               <a href="/b2b-seo-kit/" className="text-slate-900 font-medium">
                 SEO Toolkit

@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       "Free B2B SEO tools, templates, and checklists for turning keyword research into content briefs, product page improvements, and qualified leads.",
     url: "https://www.b2bseokit.com/",
     siteName: "B2B SEO Kit",
+    images: ["/logo.webp"],
     type: "website",
   },
   twitter: {
@@ -120,13 +121,17 @@ export default function Home() {
         <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
             <a href="/" className="group flex items-center gap-2">
-  <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-600 text-[10px] font-bold text-white shadow-sm transition-colors group-hover:bg-blue-700">
-    B2B
-  </span>
-  <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
-    SEO Kit
-  </span>
-</a>
+              <img
+                src="/logo-square.webp"
+                alt="B2B"
+                width={32}
+                height={32}
+                className="h-8 w-8 rounded-xl object-contain"
+              />
+              <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
+                SEO Kit
+              </span>
+            </a>
 
             <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
   <a

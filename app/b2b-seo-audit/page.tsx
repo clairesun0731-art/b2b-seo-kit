@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       "Use this free B2B SEO audit checklist to review technical SEO, keyword intent, product pages, content gaps, internal links, AI search readiness, and lead conversion paths.",
     url: "https://www.b2bseokit.com/b2b-seo-audit/",
     siteName: "B2B SEO Kit",
+    images: ["/logo.webp"],
     type: "website",
   },
   twitter: {
@@ -306,9 +307,13 @@ export default function B2BSEOAuditPage() {
         <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2 group">
-              <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-600 text-[10px] font-bold text-white shadow-sm transition-colors group-hover:bg-blue-700">
-                B2B
-              </span>
+              <img
+                src="/logo-square.webp"
+                alt="B2B"
+                width={32}
+                height={32}
+                className="h-8 w-8 rounded-xl object-contain"
+              />
               <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
                 SEO Kit
               </span>
