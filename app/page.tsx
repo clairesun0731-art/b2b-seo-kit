@@ -32,36 +32,42 @@ const tools = [
     title: "B2B SEO Audit Checklist",
     description:
       "Review your website structure, metadata, product pages, internal links, and lead-generation paths.",
+    href: "/b2b-seo-audit/",
   },
   {
     label: "Keywords",
     title: "Keyword Research Template",
     description:
       "Turn scattered B2B keywords into topic clusters for product pages, solution pages, and blog content.",
+    href: "/b2b-seo-kit/",
   },
   {
     label: "Brief",
     title: "Content Brief Generator",
     description:
       "Create SEO-friendly briefs with search intent, headings, FAQs, internal links, and CTA ideas.",
+    href: "/b2b-seo-kit/",
   },
   {
     label: "Pages",
     title: "Product Page SEO Checklist",
     description:
       "Optimize B2B product and solution pages for rankings, AI search visibility, and qualified inquiries.",
+    href: "/b2b-seo-kit/",
   },
   {
     label: "GEO",
     title: "AI Search / GEO Checklist",
     description:
       "Make content easier for AI search engines and LLMs to understand, summarize, and cite.",
+    href: "/b2b-seo-kit/",
   },
   {
     label: "Links",
     title: "Internal Linking Planner",
     description:
       "Plan contextual internal links between homepage, product pages, templates, tools, and blog articles.",
+    href: "/b2b-seo-kit/",
   },
 ];
 
@@ -114,34 +120,37 @@ export default function Home() {
         <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
             <a href="/" className="group flex items-center gap-2">
-              <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
-                B2B SEO Kit
-              </span>
-            </a>
+  <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-600 text-[10px] font-bold text-white shadow-sm transition-colors group-hover:bg-blue-700">
+    B2B
+  </span>
+  <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
+    SEO Kit
+  </span>
+</a>
 
             <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
-              <a
-                href="/b2b-seo-kit/"
-                className="transition-colors hover:text-slate-900"
-              >
-                SEO Toolkit
-              </a>
-              <a
-                href="#tools"
-                className="transition-colors hover:text-slate-900"
-              >
-                Tools
-              </a>
-              <a
-                href="#workflow"
-                className="transition-colors hover:text-slate-900"
-              >
-                Workflow
-              </a>
-              <a href="#faq" className="transition-colors hover:text-slate-900">
-                FAQ
-              </a>
-            </nav>
+  <a
+    href="/b2b-seo-kit/"
+    className="transition-colors hover:text-slate-900"
+  >
+    SEO Toolkit
+  </a>
+  <a
+    href="/b2b-seo-audit/"
+    className="transition-colors hover:text-slate-900"
+  >
+    Audit Checklist
+  </a>
+  <a
+    href="#tools"
+    className="transition-colors hover:text-slate-900"
+  >
+    Tools
+  </a>
+  <a href="#faq" className="transition-colors hover:text-slate-900">
+    FAQ
+  </a>
+</nav>
 
             <a
               href={TALLY_URL}
@@ -244,8 +253,9 @@ export default function Home() {
 
               <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {tools.map((tool) => (
-                  <div
+                  <a
                     key={tool.title}
+                    href={tool.href}
                     className="flex flex-col gap-3 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                   >
                     <div className="inline-flex w-fit rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-600">
@@ -257,7 +267,7 @@ export default function Home() {
                     <p className="text-sm leading-relaxed text-slate-600">
                       {tool.description}
                     </p>
-                  </div>
+                  </a>
                 ))}
               </div>
 

@@ -262,11 +262,14 @@ export default function B2BSEOKitPage() {
         {/* ── Header ── */}
         <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-            <a href="/" className="flex items-center gap-2 group">
-              <span className="text-[15px] font-semibold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">
-                B2B SEO Kit
-              </span>
-            </a>
+            <a href="/" className="group flex items-center gap-2">
+  <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-600 text-[10px] font-bold text-white shadow-sm transition-colors group-hover:bg-blue-700">
+    B2B
+  </span>
+  <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
+    SEO Kit
+  </span>
+</a>
             <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
               <a href="#tools-included" className="hover:text-slate-900 transition-colors">
                 Tools
@@ -363,6 +366,14 @@ export default function B2BSEOKitPage() {
               <p className="text-slate-700 leading-relaxed text-[15px] mb-4">
                 For B2B teams, the goal is not only rankings or traffic. The goal is to connect
                 SEO work to qualified leads, product page visibility, and pipeline growth.
+              </p>
+              <p className="text-slate-700 leading-relaxed text-[15px] mb-4">
+                If you need a starting point, begin with the{" "}
+                <a href="/b2b-seo-audit/" className="text-blue-600 hover:underline">
+                  B2B SEO audit checklist
+                </a>{" "}
+                to find the highest-priority page, content, and internal linking gaps before
+                working through the full toolkit.
               </p>
               <p className="text-slate-600 text-[14px] leading-relaxed border-l-2 border-slate-200 pl-4">
                 <strong>Note:</strong> B2B SEO Kit is not a full-service SEO agency. It is a
