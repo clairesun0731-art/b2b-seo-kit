@@ -1,65 +1,88 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="min-h-screen bg-[#F8FAFC] text-slate-900">
+      <section className="mx-auto flex max-w-6xl flex-col items-center px-6 py-24 text-center">
+        <div className="mb-6 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600 shadow-sm">
+          Free B2B SEO Toolkit for Marketers, Founders, and Consultants
+        </div>
+
+        <h1 className="max-w-4xl text-5xl font-bold tracking-tight text-slate-950 md:text-7xl">
+          Turn B2B Keywords Into Traffic, Content, and Leads
+        </h1>
+
+        <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+          B2B SEO Kit helps you generate keyword clusters, SEO content briefs,
+          product page checklists, and AI-search-ready optimization workflows
+          for B2B websites.
+        </p>
+
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a
+            href="#waitlist"
+            className="rounded-full bg-slate-950 px-8 py-4 text-base font-semibold text-white shadow-sm hover:bg-slate-800"
+          >
+            Join Early Access
+          </a>
+
+          <a
+            href="#tools"
+            className="rounded-full border border-slate-300 bg-white px-8 py-4 text-base font-semibold text-slate-800 shadow-sm hover:bg-slate-50"
+          >
+            View Free Tools
+          </a>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 pb-20" id="tools">
+        <div className="grid gap-6 md:grid-cols-3">
+          {[
+            "B2B SEO Checklist Generator",
+            "Keyword Cluster Template",
+            "Content Brief Generator",
+            "Product Page SEO Checklist",
+            "GEO / AI Search Checklist",
+            "Internal Linking Planner",
+          ].map((item) => (
+            <div
+              key={item}
+              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              <h3 className="text-lg font-semibold text-slate-950">{item}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">
+                A practical workflow to help B2B teams plan, optimize, and
+                convert SEO traffic into qualified leads.
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-6 pb-24" id="waitlist">
+        <div className="rounded-3xl bg-slate-950 p-8 text-center text-white md:p-12">
+          <h2 className="text-3xl font-bold">
+            Get the Free B2B SEO Kit When It Launches
+          </h2>
+
+          <p className="mt-4 text-slate-300">
+            Join the early access list and get templates, checklists, and free
+            SEO tools for B2B growth.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+
+          <form className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="min-h-12 flex-1 rounded-full border border-white/10 px-5 text-slate-950 outline-none"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <button
+              type="submit"
+              className="min-h-12 rounded-full bg-white px-8 font-semibold text-slate-950 hover:bg-slate-100"
+            >
+              Join Waitlist
+            </button>
+          </form>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
