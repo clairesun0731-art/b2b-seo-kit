@@ -4,14 +4,14 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "B2B SEO Tools & Free SEO Toolkit | B2B SEO Kit",
   description:
-    "Use B2B SEO Kit to audit B2B websites, plan keyword research, create content briefs, optimize product pages, and turn organic traffic into qualified leads.",
+    "Use B2B SEO Kit as a lightweight set of SEO tools for B2B teams to audit websites, plan keywords, create briefs, optimize product pages, and turn traffic into leads.",
   alternates: {
     canonical: "https://www.b2bseokit.com/b2b-seo-kit/",
   },
   openGraph: {
     title: "B2B SEO Tools & Free SEO Toolkit | B2B SEO Kit",
     description:
-      "Use B2B SEO Kit to audit B2B websites, plan keyword research, create content briefs, optimize product pages, and turn organic traffic into qualified leads.",
+      "Use B2B SEO Kit as a lightweight set of SEO tools for B2B teams to audit websites, plan keywords, create briefs, optimize product pages, and turn traffic into leads.",
     url: "https://www.b2bseokit.com/b2b-seo-kit/",
     siteName: "B2B SEO Kit",
     images: ["/logo.webp"],
@@ -85,6 +85,22 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Yes. B2B SEO Kit includes an AI Search and GEO (Generative Engine Optimization) checklist that helps B2B teams make their content more structured, entity-rich, and citation-friendly for AI-powered search tools like ChatGPT, Perplexity, and Google AI Overviews.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What should SEO tools for B2B teams include?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "SEO tools for B2B teams should help with keyword research, website audits, product page SEO, content briefs, internal linking, and lead-focused reporting. The most useful tools do more than show rankings; they help teams decide what to do next.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is B2B SEO Kit a full SEO platform?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. B2B SEO Kit is not a heavy SEO platform. It is a lightweight toolkit of checklists, templates, and workflows for teams that want a simpler way to turn keyword data into pages, briefs, audits, and leads.",
       },
     },
     {
@@ -371,6 +387,11 @@ export default function B2BSEOKitPage() {
               <p className="text-slate-700 leading-relaxed text-[15px] mb-4">
                 For B2B teams, the goal is not only rankings or traffic. The goal is to connect
                 SEO work to qualified leads, product page visibility, and pipeline growth.
+              </p>
+              <p className="text-slate-700 leading-relaxed text-[15px] mb-4">
+                The easiest SEO tool for B2B teams is not always the one with the most dashboards.
+                It is the one that helps your team decide what to do next, without turning every
+                keyword decision into another heavy SEO platform workflow.
               </p>
               <p className="text-slate-700 leading-relaxed text-[15px] mb-4">
                 If you need a starting point, begin with the{" "}

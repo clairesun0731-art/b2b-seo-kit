@@ -4,14 +4,14 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "B2B SEO Audit Checklist | Free B2B Website Audit Tool",
   description:
-    "Use this free B2B SEO audit checklist to review technical SEO, keyword intent, product pages, content gaps, internal links, AI search readiness, and lead conversion paths.",
+    "Use this free B2B SEO audit checklist and lightweight B2B website audit tool to review technical SEO, keyword intent, product pages, internal links, and lead paths.",
   alternates: {
     canonical: "https://www.b2bseokit.com/b2b-seo-audit/",
   },
   openGraph: {
     title: "B2B SEO Audit Checklist | Free B2B Website Audit Tool",
     description:
-      "Use this free B2B SEO audit checklist to review technical SEO, keyword intent, product pages, content gaps, internal links, AI search readiness, and lead conversion paths.",
+      "Use this free B2B SEO audit checklist and lightweight B2B website audit tool to review technical SEO, keyword intent, product pages, internal links, and lead paths.",
     url: "https://www.b2bseokit.com/b2b-seo-audit/",
     siteName: "B2B SEO Kit",
     images: ["/logo.webp"],
@@ -81,6 +81,22 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      name: "Can this be used as an SEO checklist for B2B companies?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. The checklist is designed for B2B companies that need to review technical SEO, keyword intent, product pages, content gaps, internal links, conversion paths, and AI search readiness in one workflow.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is included in a B2B website audit?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A B2B website audit should review technical SEO, keyword targeting, product and solution pages, content gaps, internal linking, conversion paths, tracking, and AI search readiness. The goal is to find which pages and workflows are blocking qualified leads.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "Is the B2B SEO audit checklist free?",
       acceptedAnswer: {
         "@type": "Answer",
@@ -101,7 +117,7 @@ const auditAreas = [
       "Canonical tags and duplicate content",
       "XML sitemap and robots.txt",
     ],
-    why: "Technical issues prevent search engines from finding and ranking your pages — no matter how good the content.",
+    why: "This section works like a B2B technical SEO checklist for crawlability, indexation, Core Web Vitals, canonical tags, sitemap, and robots.txt.",
   },
   {
     label: "Keywords",
@@ -422,6 +438,10 @@ export default function B2BSEOAuditPage() {
                 </a>{" "}
                 is a free, practical tool for teams that want to audit their own website — before
                 hiring a B2B SEO agency, starting content production, or launching a new site.
+              </p>
+              <p className="text-slate-600 text-[14px] leading-relaxed border-l-2 border-slate-200 pl-4 mt-4">
+                Use it as a lightweight B2B SEO audit tool before creating new content, hiring an
+                agency, or rebuilding your site.
               </p>
             </div>
           </section>

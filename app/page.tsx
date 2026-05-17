@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "B2B SEO Kit | Free B2B SEO Tools, Templates & Checklists",
+  title: "B2B SEO Kit | Practical SEO Workflows for Lean B2B Teams",
   description:
-    "B2B SEO Kit helps marketers, founders, consultants, and SaaS teams turn keywords into SEO audits, content briefs, product page improvements, internal links, and qualified leads.",
+    "B2B SEO Kit gives lean teams free B2B SEO tools, templates, checklists, and workflows for turning keyword research into qualified leads.",
   alternates: {
     canonical: "https://www.b2bseokit.com/",
   },
   openGraph: {
-    title: "B2B SEO Kit | Free B2B SEO Tools, Templates & Checklists",
+    title: "B2B SEO Kit | Practical SEO Workflows for Lean B2B Teams",
     description:
-      "Free B2B SEO tools, templates, and checklists for turning keyword research into content briefs, product page improvements, and qualified leads.",
+      "A calm B2B SEO workspace with free tools, templates, checklists, and workflows for turning keyword research into qualified leads.",
     url: "https://www.b2bseokit.com/",
     siteName: "B2B SEO Kit",
     images: ["/logo.webp"],
@@ -19,79 +19,85 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "B2B SEO Kit | Free B2B SEO Tools, Templates & Checklists",
+    title: "B2B SEO Kit | Practical SEO Workflows for Lean B2B Teams",
     description:
-      "Free B2B SEO tools, templates, and checklists for B2B marketers, SaaS teams, consultants, and founders.",
+      "Turn B2B keyword research into practical SEO workflows without another complex dashboard.",
+    images: ["/logo.webp"],
   },
 };
 
 const TALLY_URL = "https://tally.so/r/pbJK9J";
 
-const tools = [
+const portalCards = [
   {
-    label: "Audit",
-    title: "B2B SEO Audit Checklist",
+    label: "Audit Workflow",
+    title: "Audit your B2B website",
     description:
-      "Review your website structure, metadata, product pages, internal links, and lead-generation paths.",
+      "Find what is blocking your B2B pages from ranking, converting, and supporting qualified leads.",
     href: "/b2b-seo-audit/",
   },
   {
-    label: "Keywords",
-    title: "Keyword Research Template",
+    label: "SEO Toolkit",
+    title: "Explore the SEO Toolkit",
     description:
-      "Turn scattered B2B keywords into topic clusters for product pages, solution pages, and blog content.",
+      "Use templates and workflows for keyword research, content briefs, product page SEO, internal links, and AI search readiness.",
     href: "/b2b-seo-kit/",
   },
   {
-    label: "Brief",
-    title: "Content Brief Generator",
+    label: "Early Access",
+    title: "Get the first templates",
     description:
-      "Create SEO-friendly briefs with search intent, headings, FAQs, internal links, and CTA ideas.",
-    href: "/b2b-seo-kit/",
+      "Join early access and get practical B2B SEO templates, checklists, and workflow updates as they launch.",
+    href: TALLY_URL,
+    external: true,
+  },
+];
+
+const principles = [
+  {
+    title: "Clarity over dashboards",
+    description:
+      "Keep the next SEO decision visible: what to audit, what to brief, what to link, and what to improve.",
   },
   {
-    label: "Pages",
-    title: "Product Page SEO Checklist",
+    title: "Workflows over raw data",
     description:
-      "Optimize B2B product and solution pages for rankings, AI search visibility, and qualified inquiries.",
-    href: "/b2b-seo-kit/",
+      "Keyword data only helps when it becomes page plans, content briefs, internal links, and review steps.",
   },
   {
-    label: "GEO",
-    title: "AI Search / GEO Checklist",
+    title: "Leads over traffic",
     description:
-      "Make content easier for AI search engines and LLMs to understand, summarize, and cite.",
-    href: "/b2b-seo-kit/",
+      "B2B SEO should help the right buyers find the right pages and take a measurable next step.",
   },
-  {
-    label: "Links",
-    title: "Internal Linking Planner",
-    description:
-      "Plan contextual internal links between homepage, product pages, templates, tools, and blog articles.",
-    href: "/b2b-seo-kit/",
-  },
+];
+
+const previewOutput = [
+  "Audit priority pages",
+  "Map keywords to buyer intent",
+  "Improve internal links",
+  "Add clearer CTAs",
 ];
 
 const faqs = [
   {
     question: "What is B2B SEO Kit?",
     answer:
-      "B2B SEO Kit is a free toolkit for B2B marketers, founders, SEO consultants, SaaS teams, agencies, manufacturers, and export businesses. It helps teams turn keywords into SEO audits, content briefs, product page improvements, internal links, and AI-search-ready workflows.",
+      "B2B SEO Kit is a practical workspace with free B2B SEO tools, templates, checklists, and workflows for lean teams that need to turn keyword research into qualified leads.",
   },
   {
-    question: "Who is B2B SEO Kit for?",
+    question: "Where should I start?",
     answer:
-      "It is designed for B2B teams that need practical SEO workflows, including SaaS companies, consultants, agencies, manufacturers, exporters, and service businesses that rely on organic traffic and lead generation.",
+      "Start with the free B2B SEO audit if you want to find what is blocking rankings, conversions, and qualified leads. Explore the SEO Toolkit if you want the broader workflow for keywords, briefs, product pages, internal links, and AI search readiness.",
   },
   {
-    question: "Is B2B SEO Kit free?",
+    question: "Is it free?",
     answer:
-      "The first version is planned as a free toolkit with templates, checklists, and lightweight SEO workflow tools. More advanced workflows may be added later based on user demand.",
+      "The first version is planned as a free early access toolkit with practical templates, checklists, and lightweight workflows.",
   },
   {
-    question: "Does B2B SEO Kit include AI search optimization?",
+    question: "Who is it for?",
     answer:
-      "Yes. The toolkit includes AI search and GEO workflows that help make B2B content more structured, descriptive, entity-rich, and easier for AI systems to interpret.",
+      "It is built for B2B marketers, founders, SaaS teams, SEO consultants, agencies, manufacturers, export businesses, and lean marketing teams that need clear SEO workflows.",
   },
 ];
 
@@ -134,25 +140,16 @@ export default function Home() {
             </a>
 
             <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
-  <a
-    href="/b2b-seo-kit/"
-    className="transition-colors hover:text-slate-900"
-  >
-    SEO Toolkit
-  </a>
-  <a
-    href="/b2b-seo-audit/"
-    className="transition-colors hover:text-slate-900"
-  >
-    Audit Checklist
-  </a>
-  <a
-    href="#faq"
-    className="transition-colors hover:text-slate-900"
-  >
-    FAQ
-  </a>
-</nav>
+              <a href="/b2b-seo-kit/" className="transition-colors hover:text-slate-900">
+                SEO Toolkit
+              </a>
+              <a href="/b2b-seo-audit/" className="transition-colors hover:text-slate-900">
+                Audit Checklist
+              </a>
+              <a href="#faq" className="transition-colors hover:text-slate-900">
+                FAQ
+              </a>
+            </nav>
 
             <a
               href={TALLY_URL}
@@ -166,7 +163,7 @@ export default function Home() {
         </header>
 
         <main>
-          <section className="relative overflow-hidden px-4 pb-20 pt-16 sm:px-6 sm:pt-20">
+          <section className="relative overflow-hidden px-4 pb-16 pt-16 sm:px-6 sm:pt-20">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 opacity-[0.03]"
@@ -179,147 +176,99 @@ export default function Home() {
 
             <div className="relative mx-auto max-w-4xl text-center">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1.5 text-xs font-medium text-blue-700">
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-500" />
-                Free B2B SEO Toolkit — Early Access
+                <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                Calm B2B SEO workflows for early access teams
               </div>
 
               <h1 className="mb-5 text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl">
-                Turn B2B Keywords Into{" "}
-                <span className="text-blue-600">Traffic, Content, and Leads</span>
+                A calmer way to turn B2B keywords into clear SEO workflows
               </h1>
 
               <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl">
-                B2B SEO Kit helps marketers, founders, consultants, and SaaS
-                teams turn keyword research into SEO audits, content briefs,
-                product page improvements, internal links, and qualified leads.
+                B2B SEO Kit helps lean B2B teams audit their website, map keywords to pages,
+                create content briefs, improve product pages, and turn organic traffic into
+                qualified leads — without another complex SEO dashboard.
               </p>
 
               <div className="mb-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <a
-                  href={TALLY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/b2b-seo-audit/"
                   className="w-full rounded-2xl bg-blue-600 px-7 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 sm:w-auto"
                 >
-                  Get the Free B2B SEO Toolkit
+                  Start with a Free SEO Audit
                 </a>
 
                 <a
                   href="/b2b-seo-kit/"
                   className="w-full rounded-2xl border border-slate-200 bg-white px-7 py-3.5 text-base font-semibold text-slate-700 transition-colors hover:bg-slate-50 sm:w-auto"
                 >
-                  View Free SEO Toolkit
+                  Explore the Toolkit
                 </a>
               </div>
 
               <p className="text-sm text-slate-500">
-                Built for B2B marketers, SaaS teams, consultants, agencies,
-                manufacturers, and export businesses.
+                Built for B2B marketers, SaaS teams, consultants, agencies, manufacturers, and
+                export businesses.
               </p>
             </div>
           </section>
 
-          <section className="border-y border-slate-200 bg-white px-4 py-10 sm:px-6">
-            <div className="mx-auto max-w-3xl">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-600">
-                Quick Answer
-              </p>
-              <h2 className="mb-3 text-xl font-bold text-slate-900">
-                What is B2B SEO Kit?
-              </h2>
-              <p className="text-[15px] leading-relaxed text-slate-700">
-                <strong>B2B SEO Kit</strong> is a practical toolkit of B2B SEO
-                tools, templates, and checklists. It helps teams research
-                keywords, audit websites, plan content, optimize product pages,
-                improve internal linking, and connect SEO work to lead
-                generation.
-              </p>
-            </div>
-          </section>
-
-          <section id="tools" className="px-4 py-16 sm:px-6">
+          <section className="px-4 pb-16 sm:px-6">
             <div className="mx-auto max-w-6xl">
-              <div className="mb-10 text-center">
+              <div className="mb-8 text-center">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-blue-600">
-                  What You Get
+                  Action First
                 </p>
                 <h2 className="text-3xl font-bold tracking-tight text-slate-900">
-                  Practical SEO workflows for B2B growth
+                  Start with the workflow you need
                 </h2>
-                <p className="mx-auto mt-3 max-w-xl text-[15px] text-slate-600">
-                  Start with lightweight tools and templates that help you move
-                  from keyword research to content planning, page optimization,
-                  and lead generation.
-                </p>
               </div>
 
-              <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {tools.map((tool) => (
+              <div className="grid gap-4 md:grid-cols-3">
+                {portalCards.map((card) => (
                   <a
-                    key={tool.title}
-                    href={tool.href}
-                    className="flex flex-col gap-3 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                    key={card.label}
+                    href={card.href}
+                    target={card.external ? "_blank" : undefined}
+                    rel={card.external ? "noopener noreferrer" : undefined}
+                    className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                   >
-                    <div className="inline-flex w-fit rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-600">
-                      {tool.label}
-                    </div>
-                    <h3 className="text-[15px] font-semibold text-slate-900">
-                      {tool.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-slate-600">
-                      {tool.description}
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-600">
+                      {card.label}
                     </p>
+                    <h3 className="mb-2 text-lg font-semibold text-slate-900">{card.title}</h3>
+                    <p className="text-sm leading-relaxed text-slate-600">{card.description}</p>
                   </a>
                 ))}
               </div>
-
-              <div className="text-center">
-                <a
-                  href="/b2b-seo-kit/"
-                  className="inline-block rounded-2xl bg-blue-600 px-7 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
-                >
-                  Explore the B2B SEO Toolkit
-                </a>
-                <p className="mt-3 text-xs text-slate-400">
-                  See the full toolkit, workflow, use cases, and SEO checklist
-                  preview.
-                </p>
-              </div>
             </div>
           </section>
 
-          <section id="workflow" className="border-y border-slate-200 bg-white px-4 py-16 sm:px-6">
+          <section className="border-y border-slate-200 bg-white px-4 py-16 sm:px-6">
             <div className="mx-auto max-w-6xl">
-              <div className="grid gap-10 md:grid-cols-2">
-                <div>
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-blue-600">
-                    Why B2B SEO Is Different
-                  </p>
-                  <h2 className="text-3xl font-bold tracking-tight text-slate-900">
-                    B2B SEO should drive qualified demand, not just traffic
-                  </h2>
-                </div>
+              <div className="mb-8 text-center">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-blue-600">
+                  Principles
+                </p>
+                <h2 className="text-3xl font-bold tracking-tight text-slate-900">
+                  Built for clarity, not another dashboard
+                </h2>
+              </div>
 
-                <div className="space-y-5 text-[15px] leading-relaxed text-slate-600">
-                  <p>
-                    B2B search journeys are longer, more technical, and more
-                    comparison-driven than consumer search journeys. Buyers
-                    research problems, compare vendors, evaluate product pages,
-                    and revisit content before submitting a form.
-                  </p>
-                  <p>
-                    That means a B2B SEO workflow needs to connect keyword
-                    research, solution pages, product pages, content briefs,
-                    internal linking, and conversion paths into one practical
-                    system.
-                  </p>
-                  <a
-                    href="/b2b-seo-kit/"
-                    className="inline-flex font-semibold text-blue-600 hover:text-blue-700"
+              <div className="grid gap-4 md:grid-cols-3">
+                {principles.map((principle) => (
+                  <article
+                    key={principle.title}
+                    className="rounded-3xl border border-slate-200 bg-[#F8FAFC] p-6"
                   >
-                    Learn how the B2B SEO Toolkit works →
-                  </a>
-                </div>
+                    <h3 className="mb-2 text-[15px] font-semibold text-slate-900">
+                      {principle.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-slate-600">
+                      {principle.description}
+                    </p>
+                  </article>
+                ))}
               </div>
             </div>
           </section>
@@ -328,20 +277,14 @@ export default function Home() {
             <div className="mx-auto max-w-4xl overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
               <div className="border-b border-slate-200 p-6 sm:p-8">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-blue-600">
-                  Product Preview
+                  Short Preview
                 </p>
                 <h2 className="text-3xl font-bold text-slate-900">
-                  From keyword data to an SEO action plan
+                  From messy SEO inputs to a short action list
                 </h2>
-                <p className="mt-3 text-[15px] leading-relaxed text-slate-600">
-                  Most SEO tools give you keyword data. B2B SEO Kit is designed
-                  to help you decide what to do next: audit the right pages,
-                  create briefs, add internal links, and improve conversion
-                  paths.
-                </p>
               </div>
 
-              <div className="grid gap-0 md:grid-cols-2">
+              <div className="grid md:grid-cols-2">
                 <div className="border-b border-slate-200 p-6 md:border-b-0 md:border-r sm:p-8">
                   <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-slate-400">
                     Input
@@ -349,7 +292,7 @@ export default function Home() {
                   <div className="space-y-3">
                     {[
                       ["Website type", "B2B SaaS"],
-                      ["Main goal", "Generate qualified leads"],
+                      ["Goal", "More qualified leads"],
                       ["SEO stage", "Early growth"],
                     ].map(([label, value]) => (
                       <div
@@ -357,9 +300,7 @@ export default function Home() {
                         className="flex items-center justify-between rounded-xl border border-slate-200 bg-[#F8FAFC] px-4 py-3"
                       >
                         <span className="text-sm text-slate-500">{label}</span>
-                        <span className="text-sm font-medium text-slate-900">
-                          {value}
-                        </span>
+                        <span className="text-sm font-medium text-slate-900">{value}</span>
                       </div>
                     ))}
                   </div>
@@ -370,85 +311,68 @@ export default function Home() {
                     Output
                   </p>
                   <ul className="space-y-3">
-                    {[
-                      "Audit product and solution page titles",
-                      "Map buying-intent keywords to commercial pages",
-                      "Add FAQ blocks for AI search visibility",
-                      "Build internal links to product pages",
-                      "Track form submissions by landing page",
-                    ].map((item) => (
+                    {previewOutput.map((item) => (
                       <li key={item} className="flex items-start gap-3">
-                        <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-600">
-                          ✓
-                        </span>
-                        <span className="text-sm text-slate-700">{item}</span>
+                        <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-500" />
+                        <span className="text-sm leading-relaxed text-slate-700">{item}</span>
                       </li>
                     ))}
                   </ul>
+                  <a
+                    href="/b2b-seo-audit/"
+                    className="mt-6 inline-block rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
+                  >
+                    Try the Audit Workflow
+                  </a>
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="px-4 pb-20 sm:px-6">
-            <div className="mx-auto max-w-2xl rounded-3xl bg-slate-950 p-8 text-center text-white shadow-sm sm:p-12">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-300">
-                Free Early Access
+          <section className="px-4 pb-16 sm:px-6">
+            <div className="mx-auto max-w-3xl rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm sm:p-10">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-600">
+                Early Access
               </p>
-              <h2 className="text-3xl font-bold">
-                Get the Free B2B SEO Kit When It Launches
+              <h2 className="text-3xl font-bold text-slate-900">
+                Get practical B2B SEO templates when they launch.
               </h2>
-              <p className="mt-4 text-[15px] leading-relaxed text-slate-300">
-                Join the early access list and get practical B2B SEO templates,
-                checklists, and workflow updates as the toolkit launches.
+              <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-slate-600">
+                Join the early access list for SEO templates for B2B marketers, plus practical
+                checklists and workflows built around keyword research, audits, briefs, product
+                pages, and internal links.
               </p>
-
-              <div className="mt-8">
-                <a
-                  href={TALLY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block rounded-2xl bg-white px-8 py-4 text-base font-semibold text-slate-950 transition-colors hover:bg-slate-100"
-                >
-                  Get Free Early Access
-                </a>
-              </div>
-
-              <p className="mt-4 text-xs text-slate-400">
-                No spam. Built for practical B2B SEO workflows.
-              </p>
+              <a
+                href={TALLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 inline-block rounded-2xl bg-blue-600 px-7 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
+              >
+                Get Free Early Access
+              </a>
             </div>
           </section>
 
           <section id="faq" className="border-t border-slate-200 bg-white px-4 py-16 sm:px-6">
             <div className="mx-auto max-w-3xl">
               <div className="mb-10 text-center">
-                <h2 className="text-3xl font-bold text-slate-900">
-                  Frequently Asked Questions
-                </h2>
-                <p className="mt-3 text-[15px] text-slate-600">
-                  Common questions about B2B SEO Kit and how the toolkit works.
+                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-blue-600">
+                  FAQ
                 </p>
+                <h2 className="text-3xl font-bold text-slate-900">
+                  Homepage Questions
+                </h2>
               </div>
 
               <div className="space-y-4">
                 {faqs.map((faq) => (
-                  <details
+                  <article
                     key={faq.question}
-                    className="group overflow-hidden rounded-2xl border border-slate-200 bg-[#F8FAFC]"
+                    className="rounded-3xl border border-slate-200 bg-[#F8FAFC] p-6"
                   >
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-[15px] font-semibold text-slate-900">
-                      {faq.question}
-                      <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-slate-200 text-xs font-bold text-slate-500 transition-colors group-open:bg-blue-100 group-open:text-blue-600">
-                        +
-                      </span>
-                    </summary>
-                    <div className="px-6 pb-5">
-                      <p className="text-sm leading-relaxed text-slate-600">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </details>
+                    <h3 className="mb-2 font-semibold text-slate-900">{faq.question}</h3>
+                    <p className="text-sm leading-relaxed text-slate-600">{faq.answer}</p>
+                  </article>
                 ))}
               </div>
             </div>
@@ -457,31 +381,19 @@ export default function Home() {
 
         <footer className="border-t border-slate-200 bg-white px-4 py-8 sm:px-6">
           <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm text-slate-500 sm:flex-row">
-            <div className="flex items-center gap-2">
-              <a
-                href="/"
-                className="font-semibold text-slate-900 transition-colors hover:text-blue-600"
-              >
-                B2B SEO Kit
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <a href="/" className="font-semibold text-slate-900 hover:text-blue-600">
+                Home
               </a>
-              <span>·</span>
-              <a
-                href="/b2b-seo-kit/"
-                className="transition-colors hover:text-slate-700"
-              >
+              <a href="/b2b-seo-kit/" className="hover:text-slate-700">
                 SEO Toolkit
+              </a>
+              <a href="/b2b-seo-audit/" className="hover:text-slate-700">
+                Audit Checklist
               </a>
             </div>
 
-            <p className="text-center text-xs text-slate-400">
-              Free B2B SEO tools, templates, and checklists for B2B marketers,
-              SaaS teams, and consultants.
-            </p>
-
-            <a
-              href="mailto:hello@b2bseokit.com"
-              className="transition-colors hover:text-slate-700"
-            >
+            <a href="mailto:hello@b2bseokit.com" className="hover:text-slate-700">
               hello@b2bseokit.com
             </a>
           </div>
