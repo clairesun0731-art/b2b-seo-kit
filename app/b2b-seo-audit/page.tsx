@@ -341,6 +341,9 @@ export default function B2BSEOAuditPage() {
               <a href="/b2b-seo-audit/" className="text-slate-900 font-medium">
                 Audit Checklist
               </a>
+              <a href="/b2b-seo-strategy/" className="hover:text-slate-900 transition-colors">
+                Strategy Workflow
+              </a>
               <a href="#faq" className="hover:text-slate-900 transition-colors">
                 FAQ
               </a>

@@ -146,6 +146,9 @@ export default function Home() {
               <a href="/b2b-seo-audit/" className="transition-colors hover:text-slate-900">
                 Audit Checklist
               </a>
+              <a href="/b2b-seo-strategy/" className="transition-colors hover:text-slate-900">
+                Strategy Workflow
+              </a>
               <a href="#faq" className="transition-colors hover:text-slate-900">
                 FAQ
               </a>
