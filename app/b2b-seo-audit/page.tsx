@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import AuditGenerator from "./AuditGenerator";
 
 export const metadata: Metadata = {
   title: "B2B SEO Audit Checklist | Free B2B Website Audit Tool",
@@ -413,6 +414,8 @@ export default function B2BSEOAuditPage() {
               </p>
             </div>
           </section>
+
+          <AuditGenerator />
 
           {/* ── 2. Quick Answer ── */}
           <section className="py-10 px-4 sm:px-6 bg-white border-y border-slate-200">
