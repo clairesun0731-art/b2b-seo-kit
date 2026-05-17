@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Use this free B2B SEO audit checklist and lightweight B2B website audit tool to review technical SEO, keyword intent, product pages, internal links, and lead paths.",
   alternates: {
-    canonical: "https://www.b2bseokit.com/b2b-seo-audit/",
+    canonical: "https://www.b2bseokit.com/b2b-seo-audit",
   },
   openGraph: {
     title: "B2B SEO Audit Checklist | Free B2B Website Audit Tool",
     description:
       "Use this free B2B SEO audit checklist and lightweight B2B website audit tool to review technical SEO, keyword intent, product pages, internal links, and lead paths.",
-    url: "https://www.b2bseokit.com/b2b-seo-audit/",
+    url: "https://www.b2bseokit.com/b2b-seo-audit",
     siteName: "B2B SEO Kit",
     images: ["/logo.webp"],
     type: "website",
@@ -335,13 +335,13 @@ export default function B2BSEOAuditPage() {
               </span>
             </a>
             <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
-              <a href="/b2b-seo-kit/" className="hover:text-slate-900 transition-colors">
+              <a href="/b2b-seo-kit" className="hover:text-slate-900 transition-colors">
                 SEO Toolkit
               </a>
-              <a href="/b2b-seo-audit/" className="text-slate-900 font-medium">
+              <a href="/b2b-seo-audit" className="text-slate-900 font-medium">
                 Audit Checklist
               </a>
-              <a href="/b2b-seo-strategy/" className="hover:text-slate-900 transition-colors">
+              <a href="/b2b-seo-strategy" className="hover:text-slate-900 transition-colors">
                 Strategy Workflow
               </a>
               <a href="#faq" className="hover:text-slate-900 transition-colors">
@@ -375,7 +375,7 @@ export default function B2BSEOAuditPage() {
               <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 text-xs font-medium px-3 py-1.5 rounded-full mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                 Free Early Access — Part of{" "}
-                <a href="/b2b-seo-kit/" className="underline underline-offset-2 hover:text-blue-900">
+                <a href="/b2b-seo-kit" className="underline underline-offset-2 hover:text-blue-900">
                   B2B SEO Kit
                 </a>
               </div>
@@ -436,7 +436,7 @@ export default function B2BSEOAuditPage() {
               </p>
               <p className="text-slate-600 text-[14px] leading-relaxed border-l-2 border-slate-200 pl-4">
                 The <strong>B2B SEO audit checklist</strong> from{" "}
-                <a href="/b2b-seo-kit/" className="text-blue-600 hover:underline">
+                <a href="/b2b-seo-kit" className="text-blue-600 hover:underline">
                   B2B SEO Kit
                 </a>{" "}
                 is a free, practical tool for teams that want to audit their own website — before
@@ -773,11 +773,11 @@ export default function B2BSEOAuditPage() {
                 B2B SEO Kit
               </a>
               <span>·</span>
-              <a href="/b2b-seo-kit/" className="hover:text-slate-700 transition-colors">
+              <a href="/b2b-seo-kit" className="hover:text-slate-700 transition-colors">
                 SEO Toolkit
               </a>
               <span>·</span>
-              <a href="/b2b-seo-audit/" className="hover:text-slate-700 transition-colors">
+              <a href="/b2b-seo-audit" className="hover:text-slate-700 transition-colors">
                 Audit Checklist
               </a>
             </div>

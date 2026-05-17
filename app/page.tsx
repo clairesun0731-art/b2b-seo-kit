@@ -34,14 +34,14 @@ const portalCards = [
     title: "Audit your B2B website",
     description:
       "Find what is blocking your B2B pages from ranking, converting, and supporting qualified leads.",
-    href: "/b2b-seo-audit/",
+    href: "/b2b-seo-audit",
   },
   {
     label: "SEO Toolkit",
     title: "Explore the SEO Toolkit",
     description:
       "Use templates and workflows for keyword research, content briefs, product page SEO, internal links, and AI search readiness.",
-    href: "/b2b-seo-kit/",
+    href: "/b2b-seo-kit",
   },
   {
     label: "Early Access",
@@ -140,13 +140,13 @@ export default function Home() {
             </a>
 
             <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
-              <a href="/b2b-seo-kit/" className="transition-colors hover:text-slate-900">
+              <a href="/b2b-seo-kit" className="transition-colors hover:text-slate-900">
                 SEO Toolkit
               </a>
-              <a href="/b2b-seo-audit/" className="transition-colors hover:text-slate-900">
+              <a href="/b2b-seo-audit" className="transition-colors hover:text-slate-900">
                 Audit Checklist
               </a>
-              <a href="/b2b-seo-strategy/" className="transition-colors hover:text-slate-900">
+              <a href="/b2b-seo-strategy" className="transition-colors hover:text-slate-900">
                 Strategy Workflow
               </a>
               <a href="#faq" className="transition-colors hover:text-slate-900">
@@ -195,14 +195,14 @@ export default function Home() {
 
               <div className="mb-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <a
-                  href="/b2b-seo-audit/"
+                  href="/b2b-seo-audit"
                   className="w-full rounded-2xl bg-blue-600 px-7 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 sm:w-auto"
                 >
                   Start with a Free SEO Audit
                 </a>
 
                 <a
-                  href="/b2b-seo-kit/"
+                  href="/b2b-seo-kit"
                   className="w-full rounded-2xl border border-slate-200 bg-white px-7 py-3.5 text-base font-semibold text-slate-700 transition-colors hover:bg-slate-50 sm:w-auto"
                 >
                   Explore the Toolkit
@@ -322,7 +322,7 @@ export default function Home() {
                     ))}
                   </ul>
                   <a
-                    href="/b2b-seo-audit/"
+                    href="/b2b-seo-audit"
                     className="mt-6 inline-block rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
                   >
                     Try the Audit Workflow
@@ -388,10 +388,10 @@ export default function Home() {
               <a href="/" className="font-semibold text-slate-900 hover:text-blue-600">
                 Home
               </a>
-              <a href="/b2b-seo-kit/" className="hover:text-slate-700">
+              <a href="/b2b-seo-kit" className="hover:text-slate-700">
                 SEO Toolkit
               </a>
-              <a href="/b2b-seo-audit/" className="hover:text-slate-700">
+              <a href="/b2b-seo-audit" className="hover:text-slate-700">
                 Audit Checklist
               </a>
             </div>

@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Learn a practical B2B SEO strategy for turning keyword research into product pages, content briefs, internal links, AI-search-ready content, and qualified leads.",
   alternates: {
-    canonical: "https://www.b2bseokit.com/b2b-seo-strategy/",
+    canonical: "https://www.b2bseokit.com/b2b-seo-strategy",
   },
   openGraph: {
     title: "B2B SEO Strategy: Practical Workflow for B2B Growth",
     description:
       "Learn a practical B2B SEO strategy for turning keyword research into product pages, content briefs, internal links, AI-search-ready content, and qualified leads.",
-    url: "https://www.b2bseokit.com/b2b-seo-strategy/",
+    url: "https://www.b2bseokit.com/b2b-seo-strategy",
     siteName: "B2B SEO Kit",
     images: ["/logo.webp"],
     type: "website",
@@ -221,13 +221,13 @@ export default function B2BSEOStrategyPage() {
               </span>
             </a>
             <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
-              <a href="/b2b-seo-kit/" className="hover:text-slate-900 transition-colors">
+              <a href="/b2b-seo-kit" className="hover:text-slate-900 transition-colors">
                 SEO Toolkit
               </a>
-              <a href="/b2b-seo-audit/" className="hover:text-slate-900 transition-colors">
+              <a href="/b2b-seo-audit" className="hover:text-slate-900 transition-colors">
                 Audit Checklist
               </a>
-              <a href="/b2b-seo-strategy/" className="text-slate-900 font-medium">
+              <a href="/b2b-seo-strategy" className="text-slate-900 font-medium">
                 Strategy Workflow
               </a>
               <a href="#faq" className="hover:text-slate-900 transition-colors">
@@ -541,12 +541,12 @@ export default function B2BSEOStrategyPage() {
               </h2>
               <p className="text-[15px] leading-relaxed text-slate-700 mb-4">
                 Before building a full strategy, use the{" "}
-                <a href="/b2b-seo-audit/" className="text-blue-600 hover:underline">
+                <a href="/b2b-seo-audit" className="text-blue-600 hover:underline">
                   B2B SEO Audit Checklist
                 </a>{" "}
                 to find the pages, content gaps, and internal links that need attention first.
                 Then use the{" "}
-                <a href="/b2b-seo-kit/" className="text-blue-600 hover:underline">
+                <a href="/b2b-seo-kit" className="text-blue-600 hover:underline">
                   B2B SEO Toolkit
                 </a>{" "}
                 to turn those findings into repeatable workflows.
