@@ -40,9 +40,15 @@ type PlanBlock = {
   geoReadiness: string[];
 };
 
-type AnalyticsWindow = Window & {
-  gtag?: (command: "event", eventName: string, params?: Record<string, string>) => void;
-};
+declare global {
+  interface Window {
+    gtag?: (
+      command: "event",
+      eventName: string,
+      params?: Record<string, string>,
+    ) => void;
+  }
+}
 
 const goalPlans: Record<SeoGoal, PlanBlock> = {
   "More qualified leads": {
@@ -455,19 +461,9 @@ function uniqueItems(items: string[], limit: number) {
   return Array.from(new Set(items)).slice(0, limit);
 }
 
-function trackGenerateAuditPlan(websiteType: WebsiteType, seoGoal: SeoGoal, seoStage: SeoStage) {
-  if (typeof window === "undefined") {
-    return;
-  }
-
-  const analytics = window as AnalyticsWindow;
-
-  if (typeof analytics.gtag === "function") {
-    analytics.gtag("event", "generate_audit_plan", {
-      website_type: websiteType,
-      seo_goal: seoGoal,
-      seo_stage: seoStage,
-    });
+function trackEvent(eventName: string, params?: Record<string, string>) {
+  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+    window.gtag("event", eventName, params);
   }
 }
 
@@ -600,7 +596,11 @@ export default function AuditGenerator() {
   function handleGenerate() {
     setHasGenerated(true);
     setHasCopied(false);
-    trackGenerateAuditPlan(websiteType, seoGoal, seoStage);
+    trackEvent("generate_audit_plan", {
+      website_type: websiteType,
+      seo_goal: seoGoal,
+      seo_stage: seoStage,
+    });
   }
 
   async function handleCopy() {
@@ -617,6 +617,11 @@ export default function AuditGenerator() {
       }),
     );
     setHasCopied(true);
+    trackEvent("copy_audit_plan", {
+      website_type: websiteType,
+      seo_goal: seoGoal,
+      seo_stage: seoStage,
+    });
   }
 
   return (
@@ -795,6 +800,14 @@ export default function AuditGenerator() {
                     href={TALLY_URL}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() =>
+                      trackEvent("click_audit_checklist_cta", {
+                        source: "audit_generator",
+                        website_type: websiteType,
+                        seo_goal: seoGoal,
+                        seo_stage: seoStage,
+                      })
+                    }
                     className="inline-block rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
                   >
                     Get the Free Audit Checklist
