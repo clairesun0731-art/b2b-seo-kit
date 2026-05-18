@@ -471,11 +471,99 @@ function trackGenerateAuditPlan(websiteType: WebsiteType, seoGoal: SeoGoal, seoS
   }
 }
 
+function getRecommendedFocus(websiteType: WebsiteType, seoGoal: SeoGoal) {
+  if (seoGoal === "More qualified leads") {
+    return "Commercial pages and conversion paths";
+  }
+
+  if (seoGoal === "Better product page rankings") {
+    return websiteType === "Manufacturer / exporter" || websiteType === "B2B ecommerce"
+      ? "Category and product page depth"
+      : "Product, solution, and service page depth";
+  }
+
+  if (seoGoal === "More content traffic") {
+    return "Keyword clusters and blog-to-commercial links";
+  }
+
+  if (seoGoal === "Improve AI search visibility") {
+    return "Structured answers, FAQs, and entity-rich sections";
+  }
+
+  return "Baseline audit and agency briefing clarity";
+}
+
+function getPriorityLevel(seoGoal: SeoGoal, seoStage: SeoStage) {
+  if (seoStage === "Traffic but few leads" || seoGoal === "More qualified leads") {
+    return "High: fix lead paths before publishing more content";
+  }
+
+  if (seoStage === "Starting from scratch") {
+    return "Foundation: build core pages and tracking first";
+  }
+
+  if (seoStage === "Need to scale SEO workflow") {
+    return "Workflow: standardize briefs, links, and reporting";
+  }
+
+  return "Medium: repair intent and page depth gaps";
+}
+
+function buildAuditPlanText({
+  websiteType,
+  seoGoal,
+  seoStage,
+  auditPlan,
+}: {
+  websiteType: WebsiteType;
+  seoGoal: SeoGoal;
+  seoStage: SeoStage;
+  auditPlan: {
+    summary: {
+      recommendedFocus: string;
+      seoStage: string;
+      priorityLevel: string;
+    };
+    priorities: string[];
+    checks: string[];
+    fixes: string[];
+    internalLinks: string[];
+    conversionPaths: string[];
+    geoReadiness: string[];
+  };
+}) {
+  const sections = [
+    ["Recommended Focus", [auditPlan.summary.recommendedFocus]],
+    ["SEO Stage", [auditPlan.summary.seoStage]],
+    ["Priority Level", [auditPlan.summary.priorityLevel]],
+    ["Priority Focus", auditPlan.priorities],
+    ["Recommended Checks", auditPlan.checks],
+    ["What to Fix First", auditPlan.fixes],
+    ["Internal Linking Suggestions", auditPlan.internalLinks],
+    ["Conversion Path Suggestions", auditPlan.conversionPaths],
+    ["AI Search / GEO Readiness", auditPlan.geoReadiness],
+  ];
+
+  return [
+    "B2B SEO Audit Plan",
+    `Website type: ${websiteType}`,
+    `Main SEO goal: ${seoGoal}`,
+    `Current SEO stage: ${seoStage}`,
+    "",
+    ...sections.flatMap(([title, items]) => [
+      String(title),
+      ...(items as string[]).map((item, index) => `${index + 1}. ${item}`),
+      "",
+    ]),
+  ].join("\n");
+}
+
 export default function AuditGenerator() {
   const [websiteType, setWebsiteType] = useState<WebsiteType>("B2B SaaS");
   const [seoGoal, setSeoGoal] = useState<SeoGoal>("More qualified leads");
   const [seoStage, setSeoStage] = useState<SeoStage>("Traffic but few leads");
   const [hasGenerated, setHasGenerated] = useState(false);
+  const [hasCopied, setHasCopied] = useState(false);
 
   const auditPlan = useMemo(() => {
     const goal = goalPlans[seoGoal];
@@ -483,6 +571,11 @@ export default function AuditGenerator() {
     const website = websitePlans[websiteType];
 
     return {
+      summary: {
+        recommendedFocus: getRecommendedFocus(websiteType, seoGoal),
+        seoStage,
+        priorityLevel: getPriorityLevel(seoGoal, seoStage),
+      },
       priorities: uniqueItems(
         [goal.priorities[0], stage.priorities[0], website.priorities[0], goal.priorities[1]],
         3,
@@ -506,7 +599,24 @@ export default function AuditGenerator() {
 
   function handleGenerate() {
     setHasGenerated(true);
+    setHasCopied(false);
     trackGenerateAuditPlan(websiteType, seoGoal, seoStage);
+  }
+
+  async function handleCopy() {
+    if (!hasGenerated || !navigator.clipboard) {
+      return;
+    }
+
+    await navigator.clipboard.writeText(
+      buildAuditPlanText({
+        websiteType,
+        seoGoal,
+        seoStage,
+        auditPlan,
+      }),
+    );
+    setHasCopied(true);
   }
 
   return (
@@ -617,6 +727,26 @@ export default function AuditGenerator() {
               </div>
             ) : (
               <div className="space-y-4">
+                <div className="grid gap-3 md:grid-cols-3">
+                  {[
+                    ["Recommended Focus", auditPlan.summary.recommendedFocus],
+                    ["SEO Stage", auditPlan.summary.seoStage],
+                    ["Priority Level", auditPlan.summary.priorityLevel],
+                  ].map(([label, value]) => (
+                    <div
+                      key={label}
+                      className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm"
+                    >
+                      <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-slate-400">
+                        {label}
+                      </p>
+                      <p className="text-sm font-semibold leading-relaxed text-slate-900">
+                        {value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
                 <OutputCard title="Priority Focus" items={auditPlan.priorities} variant="bullet" />
                 <OutputCard
                   title="Recommended Checks"
@@ -644,6 +774,19 @@ export default function AuditGenerator() {
                   variant="bullet"
                 />
 
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+                  <button
+                    type="button"
+                    onClick={handleCopy}
+                    className="rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-colors hover:bg-slate-50"
+                  >
+                    Copy Audit Plan
+                  </button>
+                  {hasCopied ? (
+                    <span className="text-sm font-medium text-blue-600">Copied</span>
+                  ) : null}
+                </div>
+
                 <div className="rounded-3xl border border-blue-100 bg-blue-50 p-5">
                   <p className="mb-4 text-sm font-semibold text-slate-900">
                     Want the full checklist and templates?
@@ -656,6 +799,10 @@ export default function AuditGenerator() {
                   >
                     Get the Free Audit Checklist
                   </a>
+                  <p className="mt-3 text-xs leading-relaxed text-slate-600">
+                    Includes product page checks, internal linking prompts, conversion path ideas,
+                    and AI search readiness notes.
+                  </p>
                 </div>
               </div>
             )}

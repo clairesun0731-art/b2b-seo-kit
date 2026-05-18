@@ -393,18 +393,18 @@ export default function B2BSEOAuditPage() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
                 <a
+                  href="#audit-generator"
+                  className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-3.5 rounded-2xl transition-colors text-base shadow-sm"
+                >
+                  Generate My Audit Plan
+                </a>
+                <a
                   href={TALLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-3.5 rounded-2xl transition-colors text-base shadow-sm"
-                >
-                  Get the Free B2B SEO Audit Checklist
-                </a>
-                <a
-                  href="#audit-areas"
                   className="w-full sm:w-auto bg-white border border-slate-200 text-slate-700 font-semibold px-7 py-3.5 rounded-2xl hover:bg-slate-50 transition-colors text-base"
                 >
-                  See What's Included
+                  Get the Full Checklist
                 </a>
               </div>
 
