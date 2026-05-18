@@ -8,9 +8,9 @@ export const metadata = {
     "B2B SEO Kit helps marketers, founders, consultants, and SaaS teams turn keywords into content briefs, SEO checklists, product page optimization, and AI-search-ready workflows.",
   metadataBase: new URL("https://www.b2bseokit.com"),
   icons: {
-    icon: "/favicon.webp",
-    shortcut: "/favicon.webp",
-    apple: "/logo-square.webp",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/logo-square.png",
   },
   openGraph: {
     title: "B2B SEO Kit | Free SEO Templates, Checklists & Tools",
