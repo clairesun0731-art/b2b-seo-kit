@@ -198,7 +198,7 @@ export default function Home() {
                   href="/b2b-seo-audit"
                   className="w-full rounded-2xl bg-blue-600 px-7 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 sm:w-auto"
                 >
-                  Start with a Free SEO Audit
+                  Run the Free B2B Website Audit
                 </a>
 
                 <a

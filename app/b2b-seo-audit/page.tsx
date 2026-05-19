@@ -58,6 +58,14 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      name: "What is a free B2B website audit?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A free B2B website audit helps teams review product pages, keyword intent, internal links, conversion paths, technical basics, and AI search readiness before creating more content or hiring an SEO agency.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "Can I use this checklist before hiring a B2B SEO agency?",
       acceptedAnswer: {
         "@type": "Answer",
@@ -85,7 +93,15 @@ const faqSchema = {
       name: "Can this be used as an SEO checklist for B2B companies?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. The checklist is designed for B2B companies that need to review technical SEO, keyword intent, product pages, content gaps, internal links, conversion paths, and AI search readiness in one workflow.",
+        text: "Yes. B2B SEO Audit Generator creates a starter checklist for B2B companies that need to prioritize product page SEO, internal linking, CTA paths, content gaps, and AI search readiness.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is this a full technical SEO audit tool?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. This is a lightweight B2B SEO audit tool for prioritization. It does not crawl your site or replace a full technical audit, but it helps teams decide what to check and fix first.",
       },
     },
     {
@@ -416,6 +432,17 @@ export default function B2BSEOAuditPage() {
           </section>
 
           <AuditGenerator />
+
+          <section className="px-4 sm:px-6 pb-8">
+            <div className="max-w-3xl mx-auto">
+              <p className="text-sm leading-relaxed text-slate-600 bg-white border border-slate-200 rounded-3xl px-5 py-4 shadow-sm">
+                Use this <strong>free B2B website audit</strong> as a starting point before
+                creating more content, rebuilding product pages, or hiring an SEO agency. The
+                generator works like a lightweight <strong>B2B SEO audit checklist</strong> and{" "}
+                <strong>SEO checklist for B2B companies</strong> that need clearer priorities.
+              </p>
+            </div>
+          </section>
 
           {/* ── 2. Quick Answer ── */}
           <section className="py-10 px-4 sm:px-6 bg-white border-y border-slate-200">

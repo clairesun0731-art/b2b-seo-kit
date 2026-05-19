@@ -399,7 +399,7 @@ export default function B2BSEOKitPage() {
               <p className="text-slate-700 leading-relaxed text-[15px] mb-4">
                 If you need a starting point, begin with the{" "}
                 <a href="/b2b-seo-audit" className="text-blue-600 hover:underline">
-                  B2B SEO audit checklist
+                  B2B SEO Audit Generator
                 </a>{" "}
                 to find the highest-priority page, content, and internal linking gaps before
                 working through the full toolkit.
