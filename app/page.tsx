@@ -394,6 +394,12 @@ export default function Home() {
               <a href="/b2b-seo-audit" className="hover:text-slate-700">
                 Audit Checklist
               </a>
+              <a href="/about" className="hover:text-slate-700">
+                About
+              </a>
+              <a href="/privacy" className="hover:text-slate-700">
+                Privacy
+              </a>
             </div>
 
             <a href="mailto:hello@b2bseokit.com" className="hover:text-slate-700">

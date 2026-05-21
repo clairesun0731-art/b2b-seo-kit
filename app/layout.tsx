@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+import ConsentBanner from "@/components/ConsentBanner";
 import "./globals.css";
 
 export const metadata = {
@@ -43,18 +43,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans antialiased">
         {children}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-NR8TCEN961"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-NR8TCEN961');
-          `}
-        </Script>
+        <ConsentBanner />
       </body>
     </html>
   );

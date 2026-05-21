@@ -776,6 +776,14 @@ export default function B2BSEOKitPage() {
               <a href="/" className="hover:text-slate-700 transition-colors">
                 Home
               </a>
+              <span>·</span>
+              <a href="/about" className="hover:text-slate-700 transition-colors">
+                About
+              </a>
+              <span>·</span>
+              <a href="/privacy" className="hover:text-slate-700 transition-colors">
+                Privacy
+              </a>
             </div>
             <p className="text-xs text-slate-400 text-center">
               Free B2B SEO tools, templates, and checklists for B2B marketers, SaaS teams, and

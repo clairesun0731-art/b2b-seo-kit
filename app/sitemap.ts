@@ -3,7 +3,14 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.b2bseokit.com";
 
-  const routes = ["/", "/b2b-seo-kit", "/b2b-seo-audit", "/b2b-seo-strategy"];
+  const routes = [
+    "/",
+    "/b2b-seo-kit",
+    "/b2b-seo-audit",
+    "/b2b-seo-strategy",
+    "/about",
+    "/privacy",
+  ];
 
   return routes.map((route) => ({
     url: route === "/" ? `${baseUrl}/` : `${baseUrl}${route}`,

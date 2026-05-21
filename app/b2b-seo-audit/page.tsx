@@ -810,6 +810,14 @@ export default function B2BSEOAuditPage() {
               <a href="/b2b-seo-audit" className="hover:text-slate-700 transition-colors">
                 Audit Checklist
               </a>
+              <span>·</span>
+              <a href="/about" className="hover:text-slate-700 transition-colors">
+                About
+              </a>
+              <span>·</span>
+              <a href="/privacy" className="hover:text-slate-700 transition-colors">
+                Privacy
+              </a>
             </div>
             <p className="text-xs text-slate-400 text-center">
               Free B2B SEO audit checklist, templates, and workflows for B2B marketers and
