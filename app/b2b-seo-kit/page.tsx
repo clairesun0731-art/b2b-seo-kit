@@ -397,12 +397,22 @@ export default function B2BSEOKitPage() {
                 keyword decision into another heavy SEO platform workflow.
               </p>
               <p className="text-slate-700 leading-relaxed text-[15px] mb-4">
+                B2B SEO Kit is designed for teams looking for lightweight SEO tools for B2B teams
+                that turn keyword data into practical workflows. Instead of replacing full SEO
+                platforms, this <strong>B2B SEO tool</strong> focuses on audit planning, internal
+                linking, content-to-page mapping, conversion paths, and AI search readiness.
+              </p>
+              <p className="text-slate-700 leading-relaxed text-[15px] mb-4">
                 If you need a starting point, begin with the{" "}
                 <a href="/b2b-seo-audit" className="text-blue-600 hover:underline">
                   B2B SEO Audit Generator
                 </a>{" "}
                 to find the highest-priority page, content, and internal linking gaps before
-                working through the full toolkit.
+                working through the full toolkit. For a broader planning flow, use the{" "}
+                <a href="/b2b-seo-strategy" className="text-blue-600 hover:underline">
+                  B2B SEO Strategy Workflow
+                </a>{" "}
+                to turn those gaps into a focused roadmap.
               </p>
               <p className="text-slate-600 text-[14px] leading-relaxed border-l-2 border-slate-200 pl-4">
                 <strong>Note:</strong> B2B SEO Kit is not a full-service SEO agency. It is a
