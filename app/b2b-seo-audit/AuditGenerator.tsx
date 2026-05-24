@@ -816,6 +816,12 @@ export default function AuditGenerator() {
                     Includes product page checks, internal linking prompts, conversion path ideas,
                     and AI search readiness notes.
                   </p>
+                  <a
+                    href="/b2b-seo-strategy"
+                    className="mt-4 inline-block text-sm font-semibold text-blue-700 hover:underline"
+                  >
+                    Ready to build the strategy? Use the B2B SEO Strategy Workflow →
+                  </a>
                 </div>
               </div>
             )}

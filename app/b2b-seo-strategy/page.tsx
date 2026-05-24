@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import StrategyWorkflowGenerator from "./StrategyWorkflowGenerator";
 
 export const metadata: Metadata = {
   title: "B2B SEO Strategy: Practical Workflow for B2B Growth",
@@ -196,6 +197,20 @@ const faqSchema = {
   })),
 };
 
+const softwareApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "B2B SEO Strategy Workflow Generator",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  isAccessibleForFree: true,
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+};
+
 export default function B2BSEOStrategyPage() {
   return (
     <>
@@ -203,6 +218,11 @@ export default function B2BSEOStrategyPage() {
         id="b2b-seo-strategy-faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id="b2b-seo-strategy-tool-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
       />
 
       <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans">
@@ -283,10 +303,10 @@ export default function B2BSEOStrategyPage() {
                   Get the Free B2B SEO Toolkit
                 </a>
                 <a
-                  href="#strategy-workflow"
+                  href="#strategy-generator"
                   className="w-full sm:w-auto bg-white border border-slate-200 text-slate-700 font-semibold px-7 py-3.5 rounded-2xl hover:bg-slate-50 transition-colors text-base"
                 >
-                  See the Strategy Workflow
+                  Generate a Strategy Workflow
                 </a>
               </div>
 
@@ -315,8 +335,18 @@ export default function B2BSEOStrategyPage() {
                 For B2B teams, the goal is not just more traffic. The goal is to help the right
                 buyers find the right pages and take the next step.
               </p>
+              <p className="text-slate-700 leading-relaxed text-[15px] mt-4">
+                If you do not know where your site stands, run the{" "}
+                <a href="/b2b-seo-audit" className="text-blue-600 hover:underline">
+                  B2B SEO Audit Generator
+                </a>{" "}
+                first. Then use the workflow generator below to turn the audit into a B2B keyword
+                strategy, page plan, internal linking plan, and conversion path.
+              </p>
             </div>
           </section>
+
+          <StrategyWorkflowGenerator />
 
           <section className="py-16 px-4 sm:px-6">
             <div className="max-w-6xl mx-auto">
