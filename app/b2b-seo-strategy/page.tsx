@@ -6,14 +6,14 @@ import StrategyWorkflowGenerator from "./StrategyWorkflowGenerator";
 export const metadata: Metadata = {
   title: "B2B SEO Strategy: Practical Workflow for B2B Growth",
   description:
-    "Learn a practical B2B SEO strategy for turning keyword research into product pages, content briefs, internal links, AI-search-ready content, and qualified leads.",
+    "Use a practical B2B SEO strategy workflow to turn keyword research into page types, content planning, internal links, AI-search-ready content, and qualified leads.",
   alternates: {
     canonical: "https://www.b2bseokit.com/b2b-seo-strategy",
   },
   openGraph: {
     title: "B2B SEO Strategy: Practical Workflow for B2B Growth",
     description:
-      "Learn a practical B2B SEO strategy for turning keyword research into product pages, content briefs, internal links, AI-search-ready content, and qualified leads.",
+      "Use a practical B2B SEO strategy workflow to turn keyword research into page types, content planning, internal links, AI-search-ready content, and qualified leads.",
     url: "https://www.b2bseokit.com/b2b-seo-strategy",
     siteName: "B2B SEO Kit",
     images: ["/logo.webp"],
@@ -140,6 +140,29 @@ const comparisonRows = [
   ["Prioritizes blog volume", "Prioritizes product and solution pages"],
   ["Gives raw keyword data", "Turns keywords into workflows"],
   ["Often ignores lead quality", "Connects content to pipeline"],
+];
+
+const practicalStrategySections = [
+  {
+    title: "What a practical B2B SEO strategy should include",
+    body: "A practical B2B SEO strategy should connect keyword research, page type decisions, content briefs, commercial page fixes, internal links, conversion tracking, and AI search visibility. Lean teams do not need a complex dashboard to start. They need a repeatable workflow that shows which pages to improve first and how those pages support qualified leads.",
+  },
+  {
+    title: "How to map keywords to page types",
+    body: "B2B keyword strategy works best when every keyword cluster has a page job. Problem keywords may fit blog posts or guides. Product, service, category, listing, comparison, and vendor-intent keywords usually need commercial or structured pages. For content, directory, marketplace, and listing-style websites, many long-tail keywords should map to category or listing pages rather than isolated blog posts.",
+  },
+  {
+    title: "How to connect content with conversion paths",
+    body: "B2B content strategy for lead generation should route visitors from education to evaluation. Blog posts can support commercial pages, category pages, listing pages, demos, RFQs, consultation pages, or contact paths. The goal is not only traffic growth. The goal is to help the right visitor find the next page that answers intent and supports a qualified action.",
+  },
+  {
+    title: "How internal linking supports B2B SEO",
+    body: "Internal linking for B2B SEO helps search engines and buyers understand which pages matter most. Link from blog and support content to product, service, category, listing, comparison, and contact pages. Link from high-impression pages to underlinked money pages. Link related categories and subcategories so users can move through the site without returning to the homepage.",
+  },
+  {
+    title: "How to prepare for AI search / GEO visibility",
+    body: "AI search visibility for B2B depends on clear structure. Add concise answer blocks, direct definitions, FAQs, comparison tables, entity-rich descriptions, founder or company credibility, and page summaries that are easy to cite. This applies to B2B SEO for SaaS, manufacturers, agencies, ecommerce, content directories, and marketplace websites.",
+  },
 ];
 
 const faqs = [
@@ -316,7 +339,7 @@ export default function B2BSEOStrategyPage() {
 
               <p className="text-sm text-slate-500">
                 Built for B2B marketers, SaaS teams, consultants, agencies, manufacturers, and
-                export businesses.
+                export businesses, plus content, directory, marketplace, and listing-style sites.
               </p>
             </div>
           </section>
@@ -347,10 +370,46 @@ export default function B2BSEOStrategyPage() {
                 first. Then use the workflow generator below to turn the audit into a B2B keyword
                 strategy, page plan, internal linking plan, and conversion path.
               </p>
+              <p className="text-slate-700 leading-relaxed text-[15px] mt-4">
+                This workflow also supports content, directory, marketplace, and listing-style
+                websites where category pages, listing templates, indexation hygiene, and long-tail
+                keyword clusters matter as much as traditional product or service pages.
+              </p>
             </div>
           </section>
 
           <StrategyWorkflowGenerator />
+
+          <section className="py-16 px-4 sm:px-6 bg-white border-y border-slate-200">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-10">
+                <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-2">
+                  Practical Strategy
+                </p>
+                <h2 className="text-3xl font-bold text-slate-900">
+                  How to Turn SEO Traffic Into B2B Leads
+                </h2>
+                <p className="text-slate-600 mt-3 max-w-2xl mx-auto text-[15px]">
+                  A useful SEO strategy for B2B companies connects page types, internal links,
+                  content planning, conversion paths, and AI search readiness.
+                </p>
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                {practicalStrategySections.map((section) => (
+                  <article
+                    key={section.title}
+                    className="rounded-3xl border border-slate-200 bg-[#F8FAFC] p-6 shadow-sm"
+                  >
+                    <h3 className="mb-2 text-lg font-semibold text-slate-900">
+                      {section.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-slate-600">{section.body}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
 
           <section className="py-16 px-4 sm:px-6">
             <div className="max-w-6xl mx-auto">
