@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Script from "next/script";
 
 export const metadata: Metadata = {
@@ -118,6 +119,7 @@ const tools = [
   {
     label: "Audit",
     title: "B2B SEO Audit Checklist",
+    href: "/b2b-seo-audit",
     what: "A structured checklist to audit any B2B website for on-page SEO, technical issues, product page gaps, and AI search readiness.",
     use: "Use it before hiring an agency, launching a new site, or reviewing an existing one.",
     example:
@@ -126,6 +128,7 @@ const tools = [
   {
     label: "Template",
     title: "B2B Keyword Research Template",
+    href: "",
     what: "A structured template to organize B2B keywords by intent, page type, buyer stage, and commercial value.",
     use: "Use it to move from a raw keyword list to a prioritized page-building plan.",
     example:
@@ -134,6 +137,7 @@ const tools = [
   {
     label: "Brief",
     title: "B2B Content Brief Generator",
+    href: "/b2b-seo-brief-generator",
     what: "A guided brief format that turns a target keyword into a structured content plan with outline, intent, angle, and CTA guidance.",
     use: "Use it to brief writers, agencies, or AI tools without losing SEO intent.",
     example:
@@ -142,6 +146,7 @@ const tools = [
   {
     label: "Checklist",
     title: "Product Page SEO Checklist",
+    href: "",
     what: "A checklist specifically for optimizing B2B product, solution, and feature pages for search and conversion.",
     use: "Use it to improve pages that rank but don't convert, or pages that don't rank at all.",
     example:
@@ -150,6 +155,7 @@ const tools = [
   {
     label: "Links",
     title: "Internal Linking Planner",
+    href: "",
     what: "A simple framework to plan internal links between educational content, solution pages, and conversion pages.",
     use: "Use it to pass authority to commercial pages and guide buyers through the funnel.",
     example:
@@ -158,6 +164,7 @@ const tools = [
   {
     label: "GEO",
     title: "AI Search / GEO Checklist",
+    href: "",
     what: "A checklist to make B2B content more structured, entity-rich, and citation-ready for AI-powered search tools.",
     use: "Use it to improve visibility in ChatGPT, Perplexity, Google AI Overviews, and similar tools.",
     example:
@@ -279,7 +286,7 @@ export default function B2BSEOKitPage() {
         {/* ── Header ── */}
         <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-            <a href="/" className="group flex items-center gap-2">
+            <Link href="/" className="group flex items-center gap-2">
               <img
                 src="/logo-square.webp"
                 alt="B2B"
@@ -290,7 +297,7 @@ export default function B2BSEOKitPage() {
               <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
                 SEO Kit
               </span>
-            </a>
+            </Link>
             <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
               <a href="/b2b-seo-kit" className="text-slate-900 font-medium">
                 SEO Toolkit
@@ -300,6 +307,9 @@ export default function B2BSEOKitPage() {
               </a>
               <a href="/b2b-seo-strategy" className="hover:text-slate-900 transition-colors">
                 Strategy Workflow
+              </a>
+              <a href="/b2b-seo-brief-generator" className="hover:text-slate-900 transition-colors">
+                Brief Generator
               </a>
               <a href="#faq" className="hover:text-slate-900 transition-colors">
                 FAQ
@@ -359,7 +369,7 @@ export default function B2BSEOKitPage() {
                   href="#tools-included"
                   className="w-full sm:w-auto bg-white border border-slate-200 text-slate-700 font-semibold px-7 py-3.5 rounded-2xl hover:bg-slate-50 transition-colors text-base"
                 >
-                  See What's Included
+                  See What&apos;s Included
                 </a>
               </div>
 
@@ -475,6 +485,14 @@ export default function B2BSEOKitPage() {
                     <h3 className="font-semibold text-slate-900 text-[15px]">{t.title}</h3>
                     <p className="text-slate-600 text-sm leading-relaxed">{t.what}</p>
                     <p className="text-slate-500 text-sm">{t.use}</p>
+                    {t.href ? (
+                      <a
+                        href={t.href}
+                        className="text-sm font-semibold text-blue-600 hover:underline"
+                      >
+                        Open tool
+                      </a>
+                    ) : null}
                     <p className="text-blue-600 text-xs font-medium mt-auto pt-2 border-t border-slate-200">
                       {t.example}
                     </p>
@@ -711,6 +729,7 @@ export default function B2BSEOKitPage() {
               <ul className="inline-flex flex-col items-start gap-2 mb-8 text-left">
                 {[
                   "B2B SEO Audit Checklist",
+                  "B2B SEO Content Brief Generator",
                   "B2B Keyword Research Template",
                   "Product Page SEO Checklist",
                   "AI Search / GEO Checklist",
@@ -779,13 +798,13 @@ export default function B2BSEOKitPage() {
         <footer className="border-t border-slate-200 bg-white py-8 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
             <div className="flex items-center gap-2">
-              <a href="/" className="font-semibold text-slate-900 hover:text-blue-600 transition-colors">
+              <Link href="/" className="font-semibold text-slate-900 hover:text-blue-600 transition-colors">
                 B2B SEO Kit
-              </a>
+              </Link>
               <span>·</span>
-              <a href="/" className="hover:text-slate-700 transition-colors">
+              <Link href="/" className="hover:text-slate-700 transition-colors">
                 Home
-              </a>
+              </Link>
               <span>·</span>
               <a href="/about" className="hover:text-slate-700 transition-colors">
                 About

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const workflowCards = [
   {
     title: "SEO Audit Generator",
@@ -20,7 +22,7 @@ export default function NotFound() {
   return (
     <main className="min-h-screen bg-[#F8FAFC] px-4 py-12 text-slate-900 sm:px-6 sm:py-16">
       <div className="mx-auto flex max-w-5xl flex-col gap-10">
-        <a href="/" className="group flex w-fit items-center gap-2">
+        <Link href="/" className="group flex w-fit items-center gap-2">
           <img
             src="/logo-square.webp"
             alt="B2B"
@@ -31,7 +33,7 @@ export default function NotFound() {
           <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
             SEO Kit
           </span>
-        </a>
+        </Link>
 
         <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm sm:p-12">
           <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-blue-600">
@@ -52,12 +54,12 @@ export default function NotFound() {
             >
               Start with a Free SEO Audit
             </a>
-            <a
+            <Link
               href="/"
               className="rounded-2xl border border-slate-200 bg-white px-6 py-3.5 text-center text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50"
             >
               Go to Homepage
-            </a>
+            </Link>
           </div>
         </section>
 

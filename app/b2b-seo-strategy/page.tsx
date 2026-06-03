@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Script from "next/script";
 import StrategyWorkflowGenerator from "./StrategyWorkflowGenerator";
 
@@ -228,7 +229,7 @@ export default function B2BSEOStrategyPage() {
       <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans">
         <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-            <a href="/" className="group flex items-center gap-2">
+            <Link href="/" className="group flex items-center gap-2">
               <img
                 src="/logo-square.webp"
                 alt="B2B"
@@ -239,7 +240,7 @@ export default function B2BSEOStrategyPage() {
               <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
                 SEO Kit
               </span>
-            </a>
+            </Link>
             <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
               <a href="/b2b-seo-kit" className="hover:text-slate-900 transition-colors">
                 SEO Toolkit
@@ -249,6 +250,9 @@ export default function B2BSEOStrategyPage() {
               </a>
               <a href="/b2b-seo-strategy" className="text-slate-900 font-medium">
                 Strategy Workflow
+              </a>
+              <a href="/b2b-seo-brief-generator" className="hover:text-slate-900 transition-colors">
+                Brief Generator
               </a>
               <a href="#faq" className="hover:text-slate-900 transition-colors">
                 FAQ
@@ -467,7 +471,7 @@ export default function B2BSEOStrategyPage() {
                       <tr key={type}>
                         <td className="px-6 py-4 font-medium text-slate-900">{type}</td>
                         <td className="px-6 py-4 text-slate-600">{pageType}</td>
-                        <td className="px-6 py-4 text-slate-600">"{example}"</td>
+                        <td className="px-6 py-4 text-slate-600">&quot;{example}&quot;</td>
                       </tr>
                     ))}
                   </tbody>
@@ -582,9 +586,12 @@ export default function B2BSEOStrategyPage() {
                 to turn those findings into repeatable workflows.
               </p>
               <p className="text-[15px] leading-relaxed text-slate-700">
-                This keeps B2B SEO best practices practical: audit the current site, choose the
-                highest-value SEO tactics, brief the work clearly, and connect each page to a
-                measurable conversion path.
+                When you are ready to brief a specific page, use the{" "}
+                <a href="/b2b-seo-brief-generator" className="text-blue-600 hover:underline">
+                  B2B SEO Content Brief Generator
+                </a>{" "}
+                to turn the chosen keyword, page type, buyer, intent, and business context into a
+                practical outline with internal links, proof, CTAs, and AI search readiness notes.
               </p>
             </div>
           </section>

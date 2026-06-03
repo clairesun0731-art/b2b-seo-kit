@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/b2b-seo-kit",
     "/b2b-seo-audit",
     "/b2b-seo-strategy",
+    "/b2b-seo-brief-generator",
     "/about",
     "/privacy",
   ];

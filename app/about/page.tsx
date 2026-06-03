@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Script from "next/script";
 
 export const metadata: Metadata = {
@@ -69,7 +70,7 @@ export default function AboutPage() {
       <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans">
         <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-            <a href="/" className="group flex items-center gap-2">
+            <Link href="/" className="group flex items-center gap-2">
               <img
                 src="/logo-square.webp"
                 alt="B2B"
@@ -80,7 +81,7 @@ export default function AboutPage() {
               <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
                 SEO Kit
               </span>
-            </a>
+            </Link>
 
             <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
               <a href="/b2b-seo-kit" className="transition-colors hover:text-slate-900">
@@ -237,9 +238,9 @@ export default function AboutPage() {
         <footer className="border-t border-slate-200 bg-white px-4 py-8 sm:px-6">
           <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm text-slate-500 sm:flex-row">
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <a href="/" className="font-semibold text-slate-900 hover:text-blue-600">
+              <Link href="/" className="font-semibold text-slate-900 hover:text-blue-600">
                 Home
-              </a>
+              </Link>
               <a href="/b2b-seo-kit" className="hover:text-slate-700">
                 SEO Toolkit
               </a>

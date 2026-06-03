@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Script from "next/script";
 import AuditGenerator from "./AuditGenerator";
 
@@ -339,7 +340,7 @@ export default function B2BSEOAuditPage() {
         {/* ── Header ── */}
         <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-            <a href="/" className="flex items-center gap-2 group">
+            <Link href="/" className="flex items-center gap-2 group">
               <img
                 src="/logo-square.webp"
                 alt="B2B"
@@ -350,7 +351,7 @@ export default function B2BSEOAuditPage() {
               <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
                 SEO Kit
               </span>
-            </a>
+            </Link>
             <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
               <a href="/b2b-seo-kit" className="hover:text-slate-900 transition-colors">
                 SEO Toolkit
@@ -360,6 +361,9 @@ export default function B2BSEOAuditPage() {
               </a>
               <a href="/b2b-seo-strategy" className="hover:text-slate-900 transition-colors">
                 Strategy Workflow
+              </a>
+              <a href="/b2b-seo-brief-generator" className="hover:text-slate-900 transition-colors">
+                Brief Generator
               </a>
               <a href="#faq" className="hover:text-slate-900 transition-colors">
                 FAQ
@@ -454,7 +458,7 @@ export default function B2BSEOAuditPage() {
                 What Is a B2B SEO Audit?
               </h2>
               <p className="text-slate-700 leading-relaxed text-[15px] mb-4">
-                A <strong>B2B SEO audit</strong> is a structured review of a B2B website's
+                A <strong>B2B SEO audit</strong> is a structured review of a B2B website&apos;s
                 technical SEO, keyword targeting, product and solution pages, content gaps,
                 internal links, conversion paths, and AI search readiness. The goal is not only
                 to improve rankings, but to help the website generate more qualified leads.
@@ -471,6 +475,15 @@ export default function B2BSEOAuditPage() {
                 </a>{" "}
                 is a free, practical tool for teams that want to audit their own website — before
                 hiring a B2B SEO agency, starting content production, or launching a new site.
+              </p>
+              <p className="text-slate-600 text-[14px] leading-relaxed border-l-2 border-slate-200 pl-4 mt-4">
+                After the audit, use the{" "}
+                <a href="/b2b-seo-brief-generator" className="text-blue-600 hover:underline">
+                  B2B SEO Content Brief Generator
+                </a>{" "}
+                to turn priority keywords and page gaps into practical briefs for blog posts,
+                product pages, service pages, comparison pages, use case pages, and industry
+                landing pages.
               </p>
               <p className="text-slate-600 text-[14px] leading-relaxed border-l-2 border-slate-200 pl-4 mt-4">
                 Use it as a lightweight B2B SEO audit tool before creating new content, hiring an
@@ -796,12 +809,12 @@ export default function B2BSEOAuditPage() {
         <footer className="border-t border-slate-200 bg-white py-8 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
             <div className="flex items-center gap-3">
-              <a
+              <Link
                 href="/"
                 className="font-semibold text-slate-900 hover:text-blue-600 transition-colors"
               >
                 B2B SEO Kit
-              </a>
+              </Link>
               <span>·</span>
               <a href="/b2b-seo-kit" className="hover:text-slate-700 transition-colors">
                 SEO Toolkit
