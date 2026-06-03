@@ -424,6 +424,10 @@ function uniqueItems(items: string[]) {
   return Array.from(new Set(items)).filter(Boolean);
 }
 
+function formatList(items: string[]) {
+  return items.map((item) => `- ${item}`).join("\n");
+}
+
 function isDirectoryLike(websiteType: WebsiteType) {
   return websiteType === "Content / directory website" || websiteType === "Marketplace / listing website";
 }
@@ -580,10 +584,33 @@ export default function StrategyWorkflowGenerator() {
   const [improvements, setImprovements] = useState<Improvement[]>(defaultImprovements);
   const [contentStage, setContentStage] = useState<ContentStage>("Many pages but weak structure");
   const [hasGenerated, setHasGenerated] = useState(true);
+  const [copied, setCopied] = useState(false);
 
   const actionPlan = useMemo(
     () => buildActionPlan({ websiteType, role, seoGoal, improvements, contentStage }),
     [contentStage, improvements, role, seoGoal, websiteType],
+  );
+
+  const resultText = useMemo(
+    () =>
+      [
+        "B2B SEO Strategy Workflow",
+        "",
+        `Website Type: ${websiteType}`,
+        `Role: ${role}`,
+        `Main SEO Goal: ${seoGoal}`,
+        `Current Content Stage: ${contentStage}`,
+        "",
+        "Selected Priorities",
+        formatList(actionPlan.selectedText),
+        "",
+        ...actionPlan.sections.flatMap((section) => [
+          section.title,
+          formatList(section.items),
+          "",
+        ]),
+      ].join("\n").trim(),
+    [actionPlan, contentStage, role, seoGoal, websiteType],
   );
 
   function toggleImprovement(option: Improvement) {
@@ -596,6 +623,23 @@ export default function StrategyWorkflowGenerator() {
 
   function handleGenerate() {
     setHasGenerated(true);
+    setCopied(false);
+  }
+
+  async function handleCopyResult() {
+    if (!resultText) return;
+
+    try {
+      if (!navigator.clipboard?.writeText) {
+        throw new Error("Clipboard API is not available.");
+      }
+
+      await navigator.clipboard.writeText(resultText);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch (error) {
+      console.error("Failed to copy result:", error);
+    }
   }
 
   return (
@@ -730,6 +774,16 @@ export default function StrategyWorkflowGenerator() {
                 {actionPlan.sections.map((section, index) => (
                   <OutputSection key={section.title} section={section} index={index + 1} />
                 ))}
+
+                <div className="bg-white p-5 sm:p-6">
+                  <button
+                    type="button"
+                    onClick={handleCopyResult}
+                    className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50"
+                  >
+                    {copied ? "Copied!" : "Copy result"}
+                  </button>
+                </div>
 
                 <div className="bg-blue-50 p-5 sm:p-6">
                   <p className="mb-2 text-sm font-semibold text-slate-900">

@@ -323,6 +323,10 @@ function sentenceCaseKeyword(keyword: string) {
   return clean.charAt(0).toUpperCase() + clean.slice(1);
 }
 
+function formatList(items: string[]) {
+  return items.map((item) => `- ${item}`).join("\n");
+}
+
 export default function ContentBriefGenerator() {
   const [pageType, setPageType] = useState<PageType>("Blog post");
   const [targetKeyword, setTargetKeyword] = useState("B2B SEO strategy");
@@ -330,6 +334,7 @@ export default function ContentBriefGenerator() {
   const [searchIntent, setSearchIntent] = useState<SearchIntent>("Evaluate a solution");
   const [businessType, setBusinessType] = useState<BusinessType>("B2B SaaS");
   const [hasGenerated, setHasGenerated] = useState(true);
+  const [copied, setCopied] = useState(false);
 
   const brief = useMemo(() => {
     const keyword = sentenceCaseKeyword(targetKeyword);
@@ -366,13 +371,83 @@ export default function ContentBriefGenerator() {
     };
   }, [businessType, pageType, searchIntent, targetBuyer, targetKeyword]);
 
+  const resultText = useMemo(
+    () =>
+      [
+        "B2B SEO Content Brief",
+        "",
+        `Page Type: ${pageType}`,
+        `Target Keyword: ${sentenceCaseKeyword(targetKeyword)}`,
+        `Target Buyer: ${targetBuyer}`,
+        `Search Intent: ${searchIntent}`,
+        `Business Type: ${businessType}`,
+        "",
+        "Recommended Page Angle",
+        brief.recommendedAngle,
+        "",
+        "Search Intent Summary",
+        brief.searchIntentSummary,
+        "",
+        "Buyer Intent Notes",
+        brief.buyerIntentNotes,
+        "",
+        "Suggested H1",
+        brief.h1,
+        "",
+        "SEO Title",
+        brief.title,
+        "",
+        "Meta Description",
+        brief.metaDescription,
+        "",
+        "Content Outline",
+        formatList(brief.outline),
+        "",
+        "Must-Cover Sections",
+        formatList(brief.mustCover),
+        "",
+        "Internal Link Suggestions",
+        formatList(brief.internalLinks),
+        "",
+        "CTA Placement",
+        brief.ctaPlacement,
+        "",
+        "Trust / E-E-A-T Signals",
+        formatList(brief.trustSignals),
+        "",
+        "GEO / AI Search Readiness Notes",
+        formatList(brief.geoNotes),
+        "",
+        "Final Brief Summary",
+        brief.finalSummary,
+      ].join("\n"),
+    [brief, businessType, pageType, searchIntent, targetBuyer, targetKeyword],
+  );
+
   const handleGenerate = () => {
     setHasGenerated(true);
+    setCopied(false);
     window.gtag?.("event", "generate_content_brief", {
       page_type: pageType,
       search_intent: searchIntent,
       business_type: businessType,
     });
+  };
+
+  const handleCopyResult = async () => {
+    if (!resultText) return;
+
+    try {
+      if (!navigator.clipboard?.writeText) {
+        throw new Error("Clipboard API is not available.");
+      }
+
+      await navigator.clipboard.writeText(resultText);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch (error) {
+      console.error("Failed to copy result:", error);
+    }
   };
 
   return (
@@ -500,6 +575,16 @@ export default function ContentBriefGenerator() {
                 <BriefListBlock label="Trust / E-E-A-T Signals" items={brief.trustSignals} />
                 <BriefListBlock label="GEO / AI Search Readiness Notes" items={brief.geoNotes} />
                 <BriefTextBlock label="Final Brief Summary" text={brief.finalSummary} />
+              </div>
+
+              <div className="border-t border-slate-200 bg-white p-5 sm:p-6">
+                <button
+                  type="button"
+                  onClick={handleCopyResult}
+                  className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50"
+                >
+                  {copied ? "Copied!" : "Copy result"}
+                </button>
               </div>
 
               <div className="border-t border-slate-200 bg-[#F8FAFC] p-5 sm:p-6">
