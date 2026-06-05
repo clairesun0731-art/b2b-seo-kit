@@ -128,11 +128,20 @@ const tools = [
   {
     label: "Template",
     title: "B2B Keyword Research Template",
-    href: "",
+    href: "/b2b-keyword-research-template",
     what: "A structured template to organize B2B keywords by intent, page type, buyer stage, and commercial value.",
     use: "Use it to move from a raw keyword list to a prioritized page-building plan.",
     example:
       "Example: Map 'CRM for manufacturing teams' to a dedicated solution page instead of a blog post.",
+  },
+  {
+    label: "Plan",
+    title: "B2B SEO Template Generator",
+    href: "/b2b-seo-template",
+    what: "A lightweight generator for building a practical B2B SEO template with page types, keyword mapping, content workflow, internal links, lead paths, and GEO readiness.",
+    use: "Use it when you need a repeatable planning structure before creating briefs or updating commercial pages.",
+    example:
+      "Example: Build a SaaS template that connects feature pages, comparison pages, integration pages, and demo CTAs.",
   },
   {
     label: "Brief",

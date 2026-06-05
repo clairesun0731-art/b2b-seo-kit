@@ -45,6 +45,20 @@ const portalCards = [
     href: "/b2b-seo-kit",
   },
   {
+    label: "SEO Template",
+    title: "Build a B2B SEO template",
+    description:
+      "Generate a practical template for page types, keyword mapping, content workflow, internal links, and lead paths.",
+    href: "/b2b-seo-template",
+  },
+  {
+    label: "Keyword Map",
+    title: "Map keywords to pages",
+    description:
+      "Turn B2B keywords into problem, solution, product, comparison, and use case page priorities.",
+    href: "/b2b-keyword-research-template",
+  },
+  {
     label: "Brief Generator",
     title: "Create a B2B SEO brief",
     description:
@@ -404,6 +418,12 @@ export default function Home() {
               </a>
               <a href="/b2b-seo-audit" className="hover:text-slate-700">
                 Audit Checklist
+              </a>
+              <a href="/b2b-seo-template" className="hover:text-slate-700">
+                SEO Template
+              </a>
+              <a href="/b2b-keyword-research-template" className="hover:text-slate-700">
+                Keyword Template
               </a>
               <a href="/b2b-seo-brief-generator" className="hover:text-slate-700">
                 Brief Generator
