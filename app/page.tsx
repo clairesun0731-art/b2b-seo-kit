@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Script from "next/script";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
+import { tools } from "@/lib/tools";
 
 export const metadata: Metadata = {
   title: "B2B SEO Kit | Practical SEO Workflows for Lean B2B Teams",
@@ -29,49 +31,17 @@ export const metadata: Metadata = {
 
 const TALLY_URL = "https://tally.so/r/pbJK9J";
 
-const portalCards = [
+const homepageTools = [
+  tools[0],
+  tools[1],
   {
-    label: "Audit Workflow",
-    title: "Audit your B2B website",
+    ...tools[3],
     description:
-      "Find what is blocking your B2B pages from ranking, converting, and supporting qualified leads.",
-    href: "/b2b-seo-audit",
+      "Build a practical SEO plan structure for B2B pages, content, links, and lead paths.",
   },
   {
-    label: "SEO Toolkit",
-    title: "Explore the SEO Toolkit",
-    description:
-      "Use templates and workflows for keyword research, content briefs, product page SEO, internal links, and AI search readiness.",
-    href: "/b2b-seo-kit",
-  },
-  {
-    label: "SEO Template",
-    title: "Build a B2B SEO template",
-    description:
-      "Generate a practical template for page types, keyword mapping, content workflow, internal links, and lead paths.",
-    href: "/b2b-seo-template",
-  },
-  {
-    label: "Keyword Map",
-    title: "Map keywords to pages",
-    description:
-      "Turn B2B keywords into problem, solution, product, comparison, and use case page priorities.",
-    href: "/b2b-keyword-research-template",
-  },
-  {
-    label: "Brief Generator",
-    title: "Create a B2B SEO brief",
-    description:
-      "Turn a target keyword into a practical brief with buyer intent, outline, internal links, CTAs, and AI search readiness.",
-    href: "/b2b-seo-brief-generator",
-  },
-  {
-    label: "Early Access",
-    title: "Get the first templates",
-    description:
-      "Join early access and get practical B2B SEO templates, checklists, and workflow updates as they launch.",
-    href: TALLY_URL,
-    external: true,
+    ...tools[4],
+    description: "Map B2B keywords to buyer intent, page types, and conversion paths.",
   },
 ];
 
@@ -146,49 +116,7 @@ export default function Home() {
       />
 
       <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans">
-        <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-            <Link href="/" className="group flex items-center gap-2">
-              <img
-                src="/logo-square.webp"
-                alt="B2B"
-                width={32}
-                height={32}
-                className="h-8 w-8 rounded-xl object-contain"
-              />
-              <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
-                SEO Kit
-              </span>
-            </Link>
-
-            <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
-              <a href="/b2b-seo-kit" className="transition-colors hover:text-slate-900">
-                SEO Toolkit
-              </a>
-              <a href="/b2b-seo-audit" className="transition-colors hover:text-slate-900">
-                Audit Checklist
-              </a>
-              <a href="/b2b-seo-strategy" className="transition-colors hover:text-slate-900">
-                Strategy Workflow
-              </a>
-              <a href="/b2b-seo-brief-generator" className="transition-colors hover:text-slate-900">
-                Brief Generator
-              </a>
-              <a href="#faq" className="transition-colors hover:text-slate-900">
-                FAQ
-              </a>
-            </nav>
-
-            <a
-              href={TALLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
-            >
-              Get Free Access
-            </a>
-          </div>
-        </header>
+        <SiteHeader />
 
         <main>
           <section className="relative overflow-hidden px-4 pb-16 pt-16 sm:px-6 sm:pt-20">
@@ -253,21 +181,30 @@ export default function Home() {
               </div>
 
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                {portalCards.map((card) => (
+                {homepageTools.map((card) => (
                   <a
-                    key={card.label}
+                    key={card.href}
                     href={card.href}
-                    target={card.external ? "_blank" : undefined}
-                    rel={card.external ? "noopener noreferrer" : undefined}
                     className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                   >
                     <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-600">
-                      {card.label}
+                      {card.shortTitle}
                     </p>
-                    <h3 className="mb-2 text-lg font-semibold text-slate-900">{card.title}</h3>
+                    <h3 className="mb-2 text-lg font-semibold text-slate-900">
+                      {card.shortTitle === "SEO Template"
+                        ? "B2B SEO Template"
+                        : card.shortTitle === "Keyword Research"
+                          ? "Keyword Research Template"
+                          : card.title}
+                    </h3>
                     <p className="text-sm leading-relaxed text-slate-600">{card.description}</p>
                   </a>
                 ))}
+              </div>
+              <div className="mt-6 text-center">
+                <a href="/b2b-seo-kit/" className="text-sm font-semibold text-blue-600 hover:underline">
+                  View all free B2B SEO tools &rarr;
+                </a>
               </div>
             </div>
           </section>
@@ -407,40 +344,7 @@ export default function Home() {
           </section>
         </main>
 
-        <footer className="border-t border-slate-200 bg-white px-4 py-8 sm:px-6">
-          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm text-slate-500 sm:flex-row">
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/" className="font-semibold text-slate-900 hover:text-blue-600">
-                Home
-              </Link>
-              <a href="/b2b-seo-kit" className="hover:text-slate-700">
-                SEO Toolkit
-              </a>
-              <a href="/b2b-seo-audit" className="hover:text-slate-700">
-                Audit Checklist
-              </a>
-              <a href="/b2b-seo-template" className="hover:text-slate-700">
-                SEO Template
-              </a>
-              <a href="/b2b-keyword-research-template" className="hover:text-slate-700">
-                Keyword Template
-              </a>
-              <a href="/b2b-seo-brief-generator" className="hover:text-slate-700">
-                Brief Generator
-              </a>
-              <a href="/about" className="hover:text-slate-700">
-                About
-              </a>
-              <a href="/privacy" className="hover:text-slate-700">
-                Privacy
-              </a>
-            </div>
-
-            <a href="mailto:hello@b2bseokit.com" className="hover:text-slate-700">
-              hello@b2bseokit.com
-            </a>
-          </div>
-        </footer>
+        <SiteFooter />
       </div>
     </>
   );

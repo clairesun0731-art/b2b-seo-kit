@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Script from "next/script";
+import RelatedToolsSection from "@/components/RelatedToolsSection";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
 import AuditGenerator from "./AuditGenerator";
 
 export const metadata: Metadata = {
@@ -337,48 +339,7 @@ export default function B2BSEOAuditPage() {
       />
 
       <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans">
-        {/* ── Header ── */}
-        <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2 group">
-              <img
-                src="/logo-square.webp"
-                alt="B2B"
-                width={32}
-                height={32}
-                className="h-8 w-8 rounded-xl object-contain"
-              />
-              <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
-                SEO Kit
-              </span>
-            </Link>
-            <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
-              <a href="/b2b-seo-kit" className="hover:text-slate-900 transition-colors">
-                SEO Toolkit
-              </a>
-              <a href="/b2b-seo-audit" className="text-slate-900 font-medium">
-                Audit Checklist
-              </a>
-              <a href="/b2b-seo-strategy" className="hover:text-slate-900 transition-colors">
-                Strategy Workflow
-              </a>
-              <a href="/b2b-seo-brief-generator" className="hover:text-slate-900 transition-colors">
-                Brief Generator
-              </a>
-              <a href="#faq" className="hover:text-slate-900 transition-colors">
-                FAQ
-              </a>
-            </nav>
-            <a
-              href={TALLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition-colors"
-            >
-              Get Free Access
-            </a>
-          </div>
-        </header>
+        <SiteHeader active="audit" />
 
         <main>
           {/* ── 1. Hero ── */}
@@ -724,6 +685,19 @@ export default function B2BSEOAuditPage() {
             </div>
           </section>
 
+          <RelatedToolsSection
+            eyebrow="Next Steps"
+            title="Next steps after your audit"
+            links={[
+              { label: "Build a B2B SEO strategy", href: "/b2b-seo-strategy/" },
+              { label: "Create a reusable SEO template", href: "/b2b-seo-template/" },
+              {
+                label: "Map your keywords to pages",
+                href: "/b2b-keyword-research-template/",
+              },
+            ]}
+          />
+
           {/* ── 8. CTA Section ── */}
           <section className="py-20 px-4 sm:px-6 bg-white border-y border-slate-200">
             <div className="max-w-2xl mx-auto text-center">
@@ -805,45 +779,7 @@ export default function B2BSEOAuditPage() {
           </section>
         </main>
 
-        {/* ── Footer ── */}
-        <footer className="border-t border-slate-200 bg-white py-8 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-            <div className="flex items-center gap-3">
-              <Link
-                href="/"
-                className="font-semibold text-slate-900 hover:text-blue-600 transition-colors"
-              >
-                B2B SEO Kit
-              </Link>
-              <span>·</span>
-              <a href="/b2b-seo-kit" className="hover:text-slate-700 transition-colors">
-                SEO Toolkit
-              </a>
-              <span>·</span>
-              <a href="/b2b-seo-audit" className="hover:text-slate-700 transition-colors">
-                Audit Checklist
-              </a>
-              <span>·</span>
-              <a href="/about" className="hover:text-slate-700 transition-colors">
-                About
-              </a>
-              <span>·</span>
-              <a href="/privacy" className="hover:text-slate-700 transition-colors">
-                Privacy
-              </a>
-            </div>
-            <p className="text-xs text-slate-400 text-center">
-              Free B2B SEO audit checklist, templates, and workflows for B2B marketers and
-              consultants.
-            </p>
-            <a
-              href="mailto:hello@b2bseokit.com"
-              className="hover:text-slate-700 transition-colors"
-            >
-              hello@b2bseokit.com
-            </a>
-          </div>
-        </footer>
+        <SiteFooter />
       </div>
     </>
   );

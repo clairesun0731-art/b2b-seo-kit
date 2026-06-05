@@ -734,19 +734,19 @@ export default function B2BSEOTemplateGenerator() {
                   cards={[
                     {
                       title: "Need a full workflow? Try the B2B SEO Strategy Generator",
-                      href: "/b2b-seo-strategy",
+                      href: "/b2b-seo-strategy/",
                       description:
                         "Turn your template into a practical SEO workflow with page priorities, briefs, links, and conversion checks.",
                     },
                     {
                       title: "Not sure what to fix first? Run the B2B SEO Audit Generator",
-                      href: "/b2b-seo-audit",
+                      href: "/b2b-seo-audit/",
                       description:
                         "Find the page, content, internal linking, and GEO gaps that should shape your template.",
                     },
                     {
                       title: "Planning content next? Use the B2B Content Brief Generator",
-                      href: "/b2b-seo-brief-generator",
+                      href: "/b2b-seo-brief-generator/",
                       description:
                         "Convert one keyword group into a practical brief for writers, agencies, or AI-assisted drafting.",
                     },

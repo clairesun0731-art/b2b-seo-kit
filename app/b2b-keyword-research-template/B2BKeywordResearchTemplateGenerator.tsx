@@ -717,19 +717,19 @@ export default function B2BKeywordResearchTemplateGenerator() {
                   cards={[
                     {
                       title: "Turn this keyword map into a full strategy",
-                      href: "/b2b-seo-strategy",
+                      href: "/b2b-seo-strategy/",
                       description:
                         "Use the strategy generator to connect keywords, pages, briefs, internal links, and lead tracking.",
                     },
                     {
                       title: "Need to audit your current site first?",
-                      href: "/b2b-seo-audit",
+                      href: "/b2b-seo-audit/",
                       description:
                         "Find which product, service, content, and internal linking gaps should shape your keyword map.",
                     },
                     {
                       title: "Need a reusable planning structure?",
-                      href: "/b2b-seo-template",
+                      href: "/b2b-seo-template/",
                       description:
                         "Build the broader B2B SEO template around your keyword research and page priorities.",
                     },

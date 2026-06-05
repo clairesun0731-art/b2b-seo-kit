@@ -1,0 +1,65 @@
+// When adding a new B2B SEO Kit tool, update:
+// 1. lib/tools.ts
+// 2. app/sitemap.ts
+// 3. header navigation if needed
+// 4. footer links
+// 5. /b2b-seo-kit/ tool hub
+// 6. related tools sections
+export const tools = [
+  {
+    title: "B2B SEO Audit Generator",
+    shortTitle: "SEO Audit",
+    href: "/b2b-seo-audit/",
+    description:
+      "Find what to fix first across technical SEO, commercial pages, internal links, and lead paths.",
+    hubDescription:
+      "Find what to fix first across technical SEO, commercial pages, internal links, AI search readiness, and lead paths.",
+    cta: "Run SEO Audit \u2192",
+  },
+  {
+    title: "B2B SEO Strategy Generator",
+    shortTitle: "SEO Strategy",
+    href: "/b2b-seo-strategy/",
+    description:
+      "Create a practical B2B SEO workflow for pages, content, internal links, and conversions.",
+    hubDescription:
+      "Create a practical B2B SEO workflow for keyword mapping, page priorities, content planning, internal links, and conversions.",
+    cta: "Build SEO Strategy \u2192",
+  },
+  {
+    title: "B2B SEO Brief Generator",
+    shortTitle: "SEO Brief",
+    href: "/b2b-seo-brief-generator/",
+    description:
+      "Turn a topic into a B2B-focused content brief with search intent, outline, CTA, and internal links.",
+    hubDescription:
+      "Turn a topic into a B2B-focused content brief with search intent, outline, proof, CTA, and internal links.",
+    cta: "Create Content Brief \u2192",
+  },
+  {
+    title: "B2B SEO Template Generator",
+    shortTitle: "SEO Template",
+    href: "/b2b-seo-template/",
+    description:
+      "Build a reusable B2B SEO planning template for keywords, pages, content, links, and lead paths.",
+    hubDescription:
+      "Create a practical B2B SEO planning template with keyword mapping, page types, content workflow, internal links, and lead conversion paths.",
+    cta: "Generate SEO Template \u2192",
+  },
+  {
+    title: "B2B Keyword Research Template",
+    shortTitle: "Keyword Research",
+    href: "/b2b-keyword-research-template/",
+    description:
+      "Map B2B keywords to buyer intent, page types, commercial value, and conversion paths.",
+    hubDescription:
+      "Map B2B keywords by buyer intent, funnel stage, page type, commercial value, and conversion path.",
+    cta: "Build Keyword Map \u2192",
+  },
+] as const;
+
+export type Tool = (typeof tools)[number];
+
+export function findTool(href: Tool["href"]) {
+  return tools.find((tool) => tool.href === href);
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Script from "next/script";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "About B2B SEO Kit | Practical SEO Workflows for Lean B2B Teams",
@@ -68,46 +69,7 @@ export default function AboutPage() {
       />
 
       <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans">
-        <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-            <Link href="/" className="group flex items-center gap-2">
-              <img
-                src="/logo-square.webp"
-                alt="B2B"
-                width={32}
-                height={32}
-                className="h-8 w-8 rounded-xl object-contain"
-              />
-              <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
-                SEO Kit
-              </span>
-            </Link>
-
-            <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
-              <a href="/b2b-seo-kit" className="transition-colors hover:text-slate-900">
-                SEO Toolkit
-              </a>
-              <a href="/b2b-seo-audit" className="transition-colors hover:text-slate-900">
-                Audit Checklist
-              </a>
-              <a href="/b2b-seo-strategy" className="transition-colors hover:text-slate-900">
-                Strategy Workflow
-              </a>
-              <a href="#faq" className="transition-colors hover:text-slate-900">
-                FAQ
-              </a>
-            </nav>
-
-            <a
-              href="https://tally.so/r/pbJK9J"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
-            >
-              Get Free Access
-            </a>
-          </div>
-        </header>
+        <SiteHeader />
 
         <main>
           <section className="px-4 py-16 sm:px-6 sm:py-20">
@@ -235,31 +197,7 @@ export default function AboutPage() {
           </section>
         </main>
 
-        <footer className="border-t border-slate-200 bg-white px-4 py-8 sm:px-6">
-          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm text-slate-500 sm:flex-row">
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/" className="font-semibold text-slate-900 hover:text-blue-600">
-                Home
-              </Link>
-              <a href="/b2b-seo-kit" className="hover:text-slate-700">
-                SEO Toolkit
-              </a>
-              <a href="/b2b-seo-audit" className="hover:text-slate-700">
-                Audit Checklist
-              </a>
-              <a href="/about" className="hover:text-slate-700">
-                About
-              </a>
-              <a href="/privacy" className="hover:text-slate-700">
-                Privacy
-              </a>
-            </div>
-
-            <a href="mailto:hello@b2bseokit.com" className="hover:text-slate-700">
-              hello@b2bseokit.com
-            </a>
-          </div>
-        </footer>
+        <SiteFooter />
       </div>
     </>
   );

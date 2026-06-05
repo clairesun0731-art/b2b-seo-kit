@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Script from "next/script";
+import RelatedToolsSection from "@/components/RelatedToolsSection";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
 import StrategyWorkflowGenerator from "./StrategyWorkflowGenerator";
 
 export const metadata: Metadata = {
@@ -250,47 +252,7 @@ export default function B2BSEOStrategyPage() {
       />
 
       <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans">
-        <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-            <Link href="/" className="group flex items-center gap-2">
-              <img
-                src="/logo-square.webp"
-                alt="B2B"
-                width={32}
-                height={32}
-                className="h-8 w-8 rounded-xl object-contain"
-              />
-              <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
-                SEO Kit
-              </span>
-            </Link>
-            <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
-              <a href="/b2b-seo-kit" className="hover:text-slate-900 transition-colors">
-                SEO Toolkit
-              </a>
-              <a href="/b2b-seo-audit" className="hover:text-slate-900 transition-colors">
-                Audit Checklist
-              </a>
-              <a href="/b2b-seo-strategy" className="text-slate-900 font-medium">
-                Strategy Workflow
-              </a>
-              <a href="/b2b-seo-brief-generator" className="hover:text-slate-900 transition-colors">
-                Brief Generator
-              </a>
-              <a href="#faq" className="hover:text-slate-900 transition-colors">
-                FAQ
-              </a>
-            </nav>
-            <a
-              href={TALLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition-colors"
-            >
-              Get Free Access
-            </a>
-          </div>
-        </header>
+        <SiteHeader active="strategy" />
 
         <main>
           <section className="relative overflow-hidden pt-16 pb-20 px-4 sm:px-6">
@@ -588,6 +550,19 @@ export default function B2BSEOStrategyPage() {
             </div>
           </section>
 
+          <RelatedToolsSection
+            title="Related B2B SEO tools"
+            links={[
+              { label: "Start with an audit", href: "/b2b-seo-audit/" },
+              { label: "Use a reusable SEO template", href: "/b2b-seo-template/" },
+              {
+                label: "Build a keyword research map",
+                href: "/b2b-keyword-research-template/",
+              },
+              { label: "Plan your next content brief", href: "/b2b-seo-brief-generator/" },
+            ]}
+          />
+
           <section className="py-16 px-4 sm:px-6">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-10">
@@ -707,6 +682,7 @@ export default function B2BSEOStrategyPage() {
             </div>
           </section>
         </main>
+        <SiteFooter />
       </div>
     </>
   );

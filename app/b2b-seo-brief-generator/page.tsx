@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Script from "next/script";
+import RelatedToolsSection from "@/components/RelatedToolsSection";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
 import ContentBriefGenerator from "./ContentBriefGenerator";
 
 export const metadata: Metadata = {
@@ -27,8 +29,6 @@ export const metadata: Metadata = {
     images: ["/logo.webp"],
   },
 };
-
-const TALLY_URL = "https://tally.so/r/pbJK9J";
 
 const faqs = [
   {
@@ -163,44 +163,7 @@ export default function B2BSEOBriefGeneratorPage() {
       />
 
       <div className="min-h-screen bg-[#F8FAFC] font-sans text-slate-900">
-        <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-            <Link href="/" className="group flex items-center gap-2">
-              <img
-                src="/logo-square.webp"
-                alt="B2B"
-                width={32}
-                height={32}
-                className="h-8 w-8 rounded-xl object-contain"
-              />
-              <span className="text-[15px] font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-blue-600">
-                SEO Kit
-              </span>
-            </Link>
-            <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
-              <a href="/b2b-seo-kit" className="transition-colors hover:text-slate-900">
-                SEO Toolkit
-              </a>
-              <a href="/b2b-seo-audit" className="transition-colors hover:text-slate-900">
-                Audit Checklist
-              </a>
-              <a href="/b2b-seo-strategy" className="transition-colors hover:text-slate-900">
-                Strategy Workflow
-              </a>
-              <a href="/b2b-seo-brief-generator" className="font-medium text-slate-900">
-                Brief Generator
-              </a>
-            </nav>
-            <a
-              href={TALLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
-            >
-              Get Free Access
-            </a>
-          </div>
-        </header>
+        <SiteHeader active="tools" />
 
         <main>
           <section className="relative overflow-hidden px-4 pb-16 pt-16 sm:px-6 sm:pb-20">
@@ -354,6 +317,19 @@ export default function B2BSEOBriefGeneratorPage() {
             </div>
           </section>
 
+          <RelatedToolsSection
+            eyebrow="Before Briefs"
+            title="Before creating content briefs"
+            links={[
+              {
+                label: "Map keywords to page types",
+                href: "/b2b-keyword-research-template/",
+              },
+              { label: "Build your B2B SEO template", href: "/b2b-seo-template/" },
+              { label: "Generate your SEO strategy", href: "/b2b-seo-strategy/" },
+            ]}
+          />
+
           <section id="faq" className="px-4 py-16 sm:px-6">
             <div className="mx-auto max-w-3xl">
               <div className="mb-10 text-center">
@@ -408,22 +384,7 @@ export default function B2BSEOBriefGeneratorPage() {
           </section>
         </main>
 
-        <footer className="border-t border-slate-200 bg-white px-4 py-10 sm:px-6">
-          <div className="mx-auto flex max-w-6xl flex-col gap-4 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} B2B SEO Kit. Practical SEO workflows for B2B teams.</p>
-            <div className="flex flex-wrap gap-4">
-              <a href="/b2b-seo-kit" className="hover:text-slate-900">
-                SEO Toolkit
-              </a>
-              <a href="/b2b-seo-audit" className="hover:text-slate-900">
-                Audit Checklist
-              </a>
-              <a href="/b2b-seo-strategy" className="hover:text-slate-900">
-                Strategy Workflow
-              </a>
-            </div>
-          </div>
-        </footer>
+        <SiteFooter />
       </div>
     </>
   );
