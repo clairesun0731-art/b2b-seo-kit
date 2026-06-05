@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
-import { tools } from "@/lib/tools";
+import { liveTools } from "@/lib/tools";
 
 export const metadata: Metadata = {
   title: "B2B SEO Kit | Practical SEO Workflows for Lean B2B Teams",
@@ -32,15 +32,15 @@ export const metadata: Metadata = {
 const TALLY_URL = "https://tally.so/r/pbJK9J";
 
 const homepageTools = [
-  tools[0],
-  tools[1],
+  liveTools[0],
+  liveTools[1],
   {
-    ...tools[3],
+    ...liveTools[3],
     description:
       "Build a practical SEO plan structure for B2B pages, content, links, and lead paths.",
   },
   {
-    ...tools[4],
+    ...liveTools[4],
     description: "Map B2B keywords to buyer intent, page types, and conversion paths.",
   },
 ];

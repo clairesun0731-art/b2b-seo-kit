@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
-import { tools } from "@/lib/tools";
+import { liveTools } from "@/lib/tools";
 
 export const metadata: Metadata = {
   title: "B2B SEO Tools & Free SEO Toolkit | B2B SEO Kit",
@@ -377,7 +377,7 @@ export default function B2BSEOKitPage() {
               </div>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-                {tools.map((t) => (
+                {liveTools.map((t) => (
                   <div
                     key={t.title}
                     className="bg-[#F8FAFC] border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-col gap-2"

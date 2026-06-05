@@ -1,11 +1,12 @@
-// When adding a new B2B SEO Kit tool, update:
-// 1. lib/tools.ts
-// 2. app/sitemap.ts
-// 3. header navigation if needed
-// 4. footer links
-// 5. /b2b-seo-kit/ tool hub
-// 6. related tools sections
-export const tools = [
+// When adding a new live B2B SEO Kit tool, add it to liveTools.
+// Live tools automatically appear in the Tools dropdown, footer, and /b2b-seo-kit/ hub.
+// Also update:
+// 1. app/sitemap.ts
+// 2. related tools sections where the new tool is relevant
+// 3. page-level metadata and internal links
+//
+// Keep coming soon tools out of liveTools until their public page is ready.
+export const liveTools = [
   {
     title: "B2B SEO Audit Generator",
     shortTitle: "SEO Audit",
@@ -21,7 +22,7 @@ export const tools = [
     shortTitle: "SEO Strategy",
     href: "/b2b-seo-strategy/",
     description:
-      "Create a practical B2B SEO workflow for pages, content, internal links, and conversions.",
+      "Build a practical B2B SEO workflow for pages, content, links, and conversions.",
     hubDescription:
       "Create a practical B2B SEO workflow for keyword mapping, page priorities, content planning, internal links, and conversions.",
     cta: "Build SEO Strategy \u2192",
@@ -31,7 +32,7 @@ export const tools = [
     shortTitle: "SEO Brief",
     href: "/b2b-seo-brief-generator/",
     description:
-      "Turn a topic into a B2B-focused content brief with search intent, outline, CTA, and internal links.",
+      "Create a B2B-focused content brief with search intent, outline, CTA, and internal links.",
     hubDescription:
       "Turn a topic into a B2B-focused content brief with search intent, outline, proof, CTA, and internal links.",
     cta: "Create Content Brief \u2192",
@@ -41,7 +42,7 @@ export const tools = [
     shortTitle: "SEO Template",
     href: "/b2b-seo-template/",
     description:
-      "Build a reusable B2B SEO planning template for keywords, pages, content, links, and lead paths.",
+      "Build a reusable SEO planning template for B2B pages, keywords, content, and lead paths.",
     hubDescription:
       "Create a practical B2B SEO planning template with keyword mapping, page types, content workflow, internal links, and lead conversion paths.",
     cta: "Generate SEO Template \u2192",
@@ -58,8 +59,11 @@ export const tools = [
   },
 ] as const;
 
-export type Tool = (typeof tools)[number];
+// Backward-compatible alias for existing page imports.
+export const tools = liveTools;
+
+export type Tool = (typeof liveTools)[number];
 
 export function findTool(href: Tool["href"]) {
-  return tools.find((tool) => tool.href === href);
+  return liveTools.find((tool) => tool.href === href);
 }

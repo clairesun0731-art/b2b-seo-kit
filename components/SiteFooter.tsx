@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { tools } from "@/lib/tools";
+import { liveTools } from "@/lib/tools";
 
 export default function SiteFooter() {
   return (
@@ -19,7 +19,7 @@ export default function SiteFooter() {
             Free B2B SEO Tools
           </h2>
           <div className="grid gap-2 sm:grid-cols-2">
-            {tools.map((tool) => (
+            {liveTools.map((tool) => (
               <a key={tool.href} href={tool.href} className="hover:text-slate-900">
                 {tool.title}
               </a>
