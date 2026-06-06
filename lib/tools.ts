@@ -57,6 +57,26 @@ export const liveTools = [
       "Map B2B keywords by buyer intent, funnel stage, page type, commercial value, and conversion path.",
     cta: "Build Keyword Map \u2192",
   },
+  {
+    title: "Lead Cost Calculator",
+    shortTitle: "Lead Cost",
+    href: "/lead-cost-calculator/",
+    description:
+      "Calculate cost per lead and cost per qualified lead for B2B campaigns and channels.",
+    hubDescription:
+      "Calculate cost per lead and cost per qualified lead, then get a practical next step for improving lead quality and conversion paths.",
+    cta: "Calculate Lead Cost \u2192",
+  },
+  {
+    title: "B2B Lead Generation Calculator",
+    shortTitle: "Lead Generation",
+    href: "/b2b-lead-generation-calculator/",
+    description:
+      "Estimate B2B leads, customers, revenue, cost per lead, and cost per customer.",
+    hubDescription:
+      "Estimate leads, customers, revenue, cost per lead, and cost per customer from traffic, conversion rates, deal value, and marketing spend.",
+    cta: "Estimate Lead Funnel \u2192",
+  },
 ] as const;
 
 // Backward-compatible alias for existing page imports.

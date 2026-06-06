@@ -71,7 +71,7 @@ export default function SiteHeader({ active }: SiteHeaderProps) {
                   : "invisible translate-y-1 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100"
               } transition duration-150`}
             >
-              <div className="w-[30rem] rounded-3xl border border-slate-200 bg-white p-3 shadow-xl shadow-slate-200/60">
+              <div className="max-h-[72vh] w-[30rem] overflow-y-auto rounded-3xl border border-slate-200 bg-white p-3 shadow-xl shadow-slate-200/60">
                 <div className="grid gap-1">
                   {liveTools.map((tool) => (
                     <a

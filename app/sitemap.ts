@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/b2b-seo-brief-generator",
     "/b2b-seo-template",
     "/b2b-keyword-research-template",
+    "/lead-cost-calculator",
+    "/b2b-lead-generation-calculator",
     "/about",
     "/privacy",
   ];
