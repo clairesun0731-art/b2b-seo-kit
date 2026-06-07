@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
-import { liveTools } from "@/lib/tools";
+import { leadGenerationCalculators, seoTools } from "@/lib/tools";
 
 export const metadata: Metadata = {
   title: "B2B SEO Kit | Practical SEO Workflows for Lean B2B Teams",
@@ -32,16 +32,40 @@ export const metadata: Metadata = {
 const TALLY_URL = "https://tally.so/r/pbJK9J";
 
 const homepageTools = [
-  liveTools[0],
-  liveTools[1],
+  seoTools.find((tool) => tool.href === "/b2b-seo-audit/")!,
+  seoTools.find((tool) => tool.href === "/b2b-seo-strategy/")!,
   {
-    ...liveTools[3],
+    ...seoTools.find((tool) => tool.href === "/b2b-seo-template/")!,
     description:
       "Build a practical SEO plan structure for B2B pages, content, links, and lead paths.",
   },
   {
-    ...liveTools[4],
+    ...seoTools.find((tool) => tool.href === "/b2b-keyword-research-template/")!,
     description: "Map B2B keywords to buyer intent, page types, and conversion paths.",
+  },
+];
+
+const homepageCalculators = [
+  {
+    ...leadGenerationCalculators.find((tool) => tool.href === "/lead-cost-calculator/")!,
+    description: "Calculate cost per lead and cost per qualified lead from your marketing spend.",
+  },
+  {
+    ...leadGenerationCalculators.find(
+      (tool) => tool.href === "/b2b-lead-generation-calculator/",
+    )!,
+    description:
+      "Estimate leads, customers, revenue, CPL, and customer acquisition cost from your website traffic and conversion rates.",
+  },
+  {
+    ...leadGenerationCalculators.find((tool) => tool.href === "/roas-calculator/")!,
+    description:
+      "Calculate return on ad spend and understand how paid campaigns support B2B pipeline.",
+  },
+  {
+    ...leadGenerationCalculators.find((tool) => tool.href === "/cpm-calculator/")!,
+    description:
+      "Calculate cost per thousand impressions for paid awareness and demand generation campaigns.",
   },
 ];
 
@@ -204,6 +228,64 @@ export default function Home() {
               <div className="mt-6 text-center">
                 <a href="/b2b-seo-kit/" className="text-sm font-semibold text-blue-600 hover:underline">
                   View all free B2B SEO tools &rarr;
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <section className="px-4 pb-16 sm:px-6">
+            <div className="mx-auto max-w-6xl rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+              <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                <div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-blue-600">
+                    Lead Generation Calculators
+                  </p>
+                  <h2 className="text-3xl font-bold tracking-tight text-slate-900">
+                    B2B Lead Generation Calculators
+                  </h2>
+                  <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-slate-600">
+                    Estimate lead cost, campaign ROI, and conversion gaps before scaling your
+                    B2B SEO or paid acquisition efforts.
+                  </p>
+                </div>
+                <a
+                  href="/b2b-lead-generation-calculators/"
+                  className="text-sm font-semibold text-blue-600 hover:underline"
+                >
+                  Explore lead generation calculators &rarr;
+                </a>
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                {homepageCalculators.map((card) => (
+                  <a
+                    key={card.href}
+                    href={card.href}
+                    className="rounded-3xl border border-slate-200 bg-[#F8FAFC] p-5 transition hover:-translate-y-0.5 hover:shadow-sm"
+                  >
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-600">
+                      {card.shortTitle}
+                    </p>
+                    <h3 className="mb-2 text-lg font-semibold text-slate-900">
+                      {card.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-slate-600">{card.description}</p>
+                  </a>
+                ))}
+              </div>
+
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="/b2b-lead-generation-calculators/"
+                  className="rounded-2xl bg-blue-600 px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+                >
+                  Explore lead generation calculators
+                </a>
+                <a
+                  href="/b2b-seo-audit/"
+                  className="rounded-2xl border border-slate-200 bg-white px-5 py-3 text-center text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50"
+                >
+                  Not sure why traffic is not turning into leads? Run the B2B SEO Audit
                 </a>
               </div>
             </div>

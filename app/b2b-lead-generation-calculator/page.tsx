@@ -6,16 +6,16 @@ import SiteHeader from "@/components/SiteHeader";
 import B2BLeadGenerationCalculator from "./B2BLeadGenerationCalculator";
 
 export const metadata: Metadata = {
-  title: "B2B Lead Generation Calculator | Estimate Leads, Revenue & Cost",
+  title: "B2B Lead Generation Calculator | Estimate Leads, Revenue & CPL",
   description:
-    "Use this free B2B lead generation calculator to estimate leads, customers, revenue, cost per lead, and cost per customer from traffic and conversion rates.",
+    "Estimate website leads, customers, revenue, cost per lead, and customer acquisition cost from traffic, conversion rates, deal value, and marketing spend.",
   alternates: {
     canonical: "https://www.b2bseokit.com/b2b-lead-generation-calculator/",
   },
   openGraph: {
-    title: "B2B Lead Generation Calculator | Estimate Leads, Revenue & Cost",
+    title: "B2B Lead Generation Calculator | Estimate Leads, Revenue & CPL",
     description:
-      "Estimate leads, customers, revenue, cost per lead, and cost per customer from traffic, conversion rates, deal value, and marketing spend.",
+      "Estimate website leads, customers, revenue, cost per lead, and customer acquisition cost from traffic, conversion rates, deal value, and marketing spend.",
     url: "https://www.b2bseokit.com/b2b-lead-generation-calculator/",
     siteName: "B2B SEO Kit",
     images: ["/logo.webp"],
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "B2B Lead Generation Calculator | Estimate Leads, Revenue & Cost",
+    title: "B2B Lead Generation Calculator | Estimate Leads, Revenue & CPL",
     description:
-      "A practical B2B lead generation calculator for traffic, conversion rates, revenue, CPL, and customer acquisition cost.",
+      "Estimate website leads, customers, revenue, cost per lead, and customer acquisition cost.",
     images: ["/logo.webp"],
   },
 };

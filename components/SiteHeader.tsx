@@ -2,9 +2,14 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { liveTools } from "@/lib/tools";
+import { leadGenerationCalculators, seoTools } from "@/lib/tools";
 
 const TALLY_URL = "https://tally.so/r/pbJK9J";
+
+const toolGroups = [
+  { label: "SEO Tools", tools: seoTools },
+  { label: "Lead Generation Calculators", tools: leadGenerationCalculators },
+] as const;
 
 type SiteHeaderProps = {
   active?: "tools" | "audit" | "strategy";
@@ -71,21 +76,30 @@ export default function SiteHeader({ active }: SiteHeaderProps) {
                   : "invisible translate-y-1 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100"
               } transition duration-150`}
             >
-              <div className="max-h-[72vh] w-[30rem] overflow-y-auto rounded-3xl border border-slate-200 bg-white p-3 shadow-xl shadow-slate-200/60">
-                <div className="grid gap-1">
-                  {liveTools.map((tool) => (
-                    <a
-                      key={tool.href}
-                      href={tool.href}
-                      className="rounded-2xl p-4 transition-colors hover:bg-[#F8FAFC] focus:bg-[#F8FAFC] focus:outline-none"
-                    >
-                      <span className="block text-sm font-semibold text-slate-900">
-                        {tool.title}
-                      </span>
-                      <span className="mt-1 block text-sm leading-relaxed text-slate-500">
-                        {tool.description}
-                      </span>
-                    </a>
+              <div className="max-h-[76vh] w-[32rem] overflow-y-auto rounded-3xl border border-slate-200 bg-white p-3 shadow-xl shadow-slate-200/60">
+                <div className="grid gap-3">
+                  {toolGroups.map((group) => (
+                    <div key={group.label}>
+                      <p className="px-3 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-widest text-slate-400">
+                        {group.label}
+                      </p>
+                      <div className="grid gap-1">
+                        {group.tools.map((tool) => (
+                          <a
+                            key={tool.href}
+                            href={tool.href}
+                            className="rounded-2xl p-3 transition-colors hover:bg-[#F8FAFC] focus:bg-[#F8FAFC] focus:outline-none"
+                          >
+                            <span className="block text-sm font-semibold text-slate-900">
+                              {tool.title}
+                            </span>
+                            <span className="mt-1 block text-sm leading-relaxed text-slate-500">
+                              {tool.description}
+                            </span>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -159,18 +173,27 @@ export default function SiteHeader({ active }: SiteHeaderProps) {
             </button>
 
             {mobileToolsOpen ? (
-              <div id="mobile-tools-menu" className="grid gap-2 rounded-2xl border border-slate-200 bg-white p-2">
-                {liveTools.map((tool) => (
-                  <a
-                    key={tool.href}
-                    href={tool.href}
-                    className="rounded-xl px-3 py-3 text-sm transition-colors hover:bg-[#F8FAFC] focus:bg-[#F8FAFC] focus:outline-none"
-                  >
-                    <span className="block font-semibold text-slate-900">{tool.title}</span>
-                    <span className="mt-1 block leading-relaxed text-slate-500">
-                      {tool.description}
-                    </span>
-                  </a>
+              <div id="mobile-tools-menu" className="grid gap-3 rounded-2xl border border-slate-200 bg-white p-2">
+                {toolGroups.map((group) => (
+                  <div key={group.label}>
+                    <p className="px-3 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-widest text-slate-400">
+                      {group.label}
+                    </p>
+                    <div className="grid gap-1">
+                      {group.tools.map((tool) => (
+                        <a
+                          key={tool.href}
+                          href={tool.href}
+                          className="rounded-xl px-3 py-3 text-sm transition-colors hover:bg-[#F8FAFC] focus:bg-[#F8FAFC] focus:outline-none"
+                        >
+                          <span className="block font-semibold text-slate-900">{tool.title}</span>
+                          <span className="mt-1 block leading-relaxed text-slate-500">
+                            {tool.description}
+                          </span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             ) : null}

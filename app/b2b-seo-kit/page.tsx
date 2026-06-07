@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
-import { liveTools } from "@/lib/tools";
+import { leadGenerationCalculators, seoTools } from "@/lib/tools";
 
 export const metadata: Metadata = {
   title: "B2B SEO Tools & Free SEO Toolkit | B2B SEO Kit",
@@ -217,6 +217,9 @@ const useCases = [
 ];
 
 const faqs = faqSchema.mainEntity;
+const kitSeoTools = seoTools.filter((tool) => tool.href !== "/b2b-seo-kit/");
+const calculatorCluster = leadGenerationCalculators[0];
+const calculatorTools = leadGenerationCalculators.slice(1);
 
 export default function B2BSEOKitPage() {
   return (
@@ -377,7 +380,7 @@ export default function B2BSEOKitPage() {
               </div>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-                {liveTools.map((t) => (
+                {kitSeoTools.map((t) => (
                   <div
                     key={t.title}
                     className="bg-[#F8FAFC] border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-col gap-2"
@@ -399,6 +402,46 @@ export default function B2BSEOKitPage() {
                     </a>
                   </div>
                 ))}
+              </div>
+
+              <div className="mb-10 rounded-3xl border border-slate-200 bg-[#F8FAFC] p-6 shadow-sm sm:p-8">
+                <div className="grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:items-start">
+                  <div>
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-blue-600">
+                      Calculator Cluster
+                    </p>
+                    <h3 className="mb-3 text-2xl font-bold text-slate-900">
+                      Lead generation calculators for B2B teams
+                    </h3>
+                    <p className="text-[15px] leading-relaxed text-slate-600">
+                      Use simple calculators to estimate cost per lead, ROAS, CPM, and website
+                      lead generation potential. These tools help connect SEO, paid campaigns,
+                      commercial pages, and conversion paths to real pipeline outcomes.
+                    </p>
+                    <a
+                      href={calculatorCluster.href}
+                      className="mt-5 inline-block rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+                    >
+                      View B2B lead generation calculators
+                    </a>
+                  </div>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {calculatorTools.map((tool) => (
+                      <a
+                        key={tool.href}
+                        href={tool.href}
+                        className="rounded-2xl border border-slate-200 bg-white p-4 transition-colors hover:bg-slate-50"
+                      >
+                        <span className="block text-sm font-semibold text-slate-900">
+                          {tool.title}
+                        </span>
+                        <span className="mt-1 block text-sm leading-relaxed text-slate-500">
+                          {tool.description}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               <div className="text-center">

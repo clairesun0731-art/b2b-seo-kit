@@ -1,4 +1,4 @@
-// When adding a new live B2B SEO Kit tool, add it to liveTools.
+// When adding a new live B2B SEO Kit tool, add it to the right registry below.
 // Live tools automatically appear in the Tools dropdown, footer, and /b2b-seo-kit/ hub.
 // Also update:
 // 1. app/sitemap.ts
@@ -6,7 +6,17 @@
 // 3. page-level metadata and internal links
 //
 // Keep coming soon tools out of liveTools until their public page is ready.
-export const liveTools = [
+export const seoTools = [
+  {
+    title: "B2B SEO Kit",
+    shortTitle: "SEO Kit",
+    href: "/b2b-seo-kit/",
+    description:
+      "Explore the full B2B SEO toolkit for audits, strategy, briefs, templates, and lead-focused workflows.",
+    hubDescription:
+      "Use the main B2B SEO Kit hub to move from audit to strategy, keyword mapping, content planning, internal links, and lead-focused page optimization.",
+    cta: "Explore SEO Kit \u2192",
+  },
   {
     title: "B2B SEO Audit Generator",
     shortTitle: "SEO Audit",
@@ -18,7 +28,7 @@ export const liveTools = [
     cta: "Run SEO Audit \u2192",
   },
   {
-    title: "B2B SEO Strategy Generator",
+    title: "B2B SEO Strategy Workflow Generator",
     shortTitle: "SEO Strategy",
     href: "/b2b-seo-strategy/",
     description:
@@ -57,6 +67,19 @@ export const liveTools = [
       "Map B2B keywords by buyer intent, funnel stage, page type, commercial value, and conversion path.",
     cta: "Build Keyword Map \u2192",
   },
+] as const;
+
+export const leadGenerationCalculators = [
+  {
+    title: "B2B Lead Generation Calculators",
+    shortTitle: "Calculators",
+    href: "/b2b-lead-generation-calculators/",
+    description:
+      "Use simple calculators for lead cost, ROAS, CPM, and B2B website lead generation planning.",
+    hubDescription:
+      "Use simple calculators to estimate cost per lead, ROAS, CPM, and website lead generation potential.",
+    cta: "Explore Calculators \u2192",
+  },
   {
     title: "Lead Cost Calculator",
     shortTitle: "Lead Cost",
@@ -77,7 +100,29 @@ export const liveTools = [
       "Estimate leads, customers, revenue, cost per lead, and cost per customer from traffic, conversion rates, deal value, and marketing spend.",
     cta: "Estimate Lead Funnel \u2192",
   },
+  {
+    title: "ROAS Calculator",
+    shortTitle: "ROAS",
+    href: "/roas-calculator/",
+    description:
+      "Calculate return on ad spend and understand paid campaign efficiency for B2B lead generation.",
+    hubDescription:
+      "Calculate return on ad spend from revenue and advertising cost, then connect paid campaign performance to pipeline planning.",
+    cta: "Calculate ROAS \u2192",
+  },
+  {
+    title: "CPM Calculator",
+    shortTitle: "CPM",
+    href: "/cpm-calculator/",
+    description:
+      "Calculate cost per thousand impressions for paid awareness and demand generation campaigns.",
+    hubDescription:
+      "Calculate CPM from ad spend and impressions so paid awareness campaigns can be compared with lead cost and funnel outcomes.",
+    cta: "Calculate CPM \u2192",
+  },
 ] as const;
+
+export const liveTools = [...seoTools, ...leadGenerationCalculators] as const;
 
 // Backward-compatible alias for existing page imports.
 export const tools = liveTools;

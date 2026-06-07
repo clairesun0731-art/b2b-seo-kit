@@ -3,63 +3,58 @@ import Script from "next/script";
 import RelatedToolsSection from "@/components/RelatedToolsSection";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
-import LeadCostCalculator from "./LeadCostCalculator";
+import CpmCalculator from "./CpmCalculator";
 
 export const metadata: Metadata = {
-  title: "Lead Cost Calculator | Calculate Cost Per Lead",
+  title: "CPM Calculator | Cost Per Thousand Impressions",
   description:
-    "Calculate cost per lead and cost per qualified lead from your marketing spend. Built for B2B marketers, SaaS teams, agencies, and consultants.",
+    "Calculate CPM from ad spend and impressions. Use this simple CPM calculator for B2B awareness, demand generation, and paid campaign planning.",
   alternates: {
-    canonical: "https://www.b2bseokit.com/lead-cost-calculator/",
+    canonical: "https://www.b2bseokit.com/cpm-calculator/",
   },
   openGraph: {
-    title: "Lead Cost Calculator | Calculate Cost Per Lead",
+    title: "CPM Calculator | Cost Per Thousand Impressions",
     description:
-      "Calculate cost per lead and cost per qualified lead from your marketing spend. Built for B2B marketers, SaaS teams, agencies, and consultants.",
-    url: "https://www.b2bseokit.com/lead-cost-calculator/",
+      "Calculate CPM from ad spend and impressions for B2B awareness, demand generation, and paid campaign planning.",
+    url: "https://www.b2bseokit.com/cpm-calculator/",
     siteName: "B2B SEO Kit",
     images: ["/logo.webp"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lead Cost Calculator | Calculate Cost Per Lead",
+    title: "CPM Calculator | Cost Per Thousand Impressions",
     description:
-      "Calculate cost per lead and cost per qualified lead from your marketing spend.",
+      "A simple CPM calculator for B2B awareness, demand generation, and paid campaign planning.",
     images: ["/logo.webp"],
   },
 };
 
 const faqs = [
   {
-    question: "What is cost per lead?",
+    question: "What is CPM?",
     answer:
-      "Cost per lead is the amount of marketing spend divided by the number of leads generated. It helps B2B teams understand how much each form fill, inquiry, demo request, quote request, or consultation lead costs.",
+      "CPM means cost per thousand impressions. It shows how much a paid campaign costs for every 1,000 times an ad is shown.",
   },
   {
-    question: "How do you calculate cost per lead?",
+    question: "How do you calculate CPM?",
     answer:
-      "Cost per lead equals total marketing spend divided by total leads. For example, if you spend $5,000 and generate 100 leads, your cost per lead is $50.",
+      "CPM equals ad spend divided by impressions, multiplied by 1,000. If you spend $3,000 for 150,000 impressions, CPM is $20.",
   },
   {
-    question: "What is cost per qualified lead?",
+    question: "Is a lower CPM always better?",
     answer:
-      "Cost per qualified lead divides total marketing spend by the number of leads that match your qualification criteria. It is often more useful for B2B teams than cost per lead because it reflects lead quality.",
+      "No. A lower CPM can help awareness, but B2B teams should also check audience quality, click quality, landing page engagement, and lead generation outcomes.",
   },
   {
-    question: "What is a good cost per lead for B2B marketing?",
+    question: "When should B2B teams use CPM?",
     answer:
-      "A good B2B cost per lead depends on deal size, sales cycle, conversion rate, and lead quality. A higher cost per lead can be healthy when the leads are qualified and average deal value supports the spend.",
+      "Use CPM when comparing awareness, retargeting, and demand generation campaigns. For lead generation decisions, pair CPM with ROAS, cost per lead, and conversion rate.",
   },
   {
-    question: "Should SEO leads and paid leads be measured separately?",
+    question: "How can B2B teams improve CPM performance?",
     answer:
-      "Yes. Organic, paid, referral, and outbound leads often have different costs and qualification rates. Measuring them separately helps teams decide which channels deserve more investment.",
-  },
-  {
-    question: "How can B2B teams reduce cost per qualified lead?",
-    answer:
-      "B2B teams can reduce cost per qualified lead by improving buyer-intent keyword targeting, strengthening landing pages, adding clearer CTAs, improving forms, and tracking qualified leads by source and landing page.",
+      "Improve CPM performance by tightening audience targeting, improving creative relevance, excluding low-fit audiences, and connecting campaigns to clear landing pages and retargeting paths.",
   },
 ];
 
@@ -79,7 +74,7 @@ const faqSchema = {
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "Lead Cost Calculator",
+  name: "CPM Calculator",
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   isAccessibleForFree: true,
@@ -92,33 +87,29 @@ const softwareApplicationSchema = {
 
 const educationalSections = [
   {
-    title: "What is a lead cost calculator?",
-    body: "A lead cost calculator helps B2B teams calculate cost per lead by comparing marketing spend with lead volume. It is useful for SEO, paid ads, agencies, consulting funnels, SaaS demo campaigns, manufacturer RFQ campaigns, and any channel where lead quality matters.",
+    title: "What this CPM calculator measures",
+    body: "This CPM calculator measures cost per thousand impressions from ad spend and total impressions. It is useful for B2B awareness, retargeting, and demand generation campaigns.",
   },
   {
-    title: "Why cost per qualified lead matters for B2B teams",
-    body: "Cost per lead can look efficient while cost per qualified lead is too high. Lean teams should separate all leads from qualified leads so they can see whether a channel is attracting real buyers or only low-fit form submissions.",
+    title: "How CPM fits into B2B lead generation",
+    body: "CPM is an awareness metric, not a pipeline metric by itself. Use it to compare reach efficiency, then connect the campaign to landing page visits, leads, qualified leads, and revenue.",
   },
   {
-    title: "How to use cost per lead with SEO and conversion work",
-    body: "Use cost per lead alongside landing page conversion rate, qualified lead rate, and revenue quality. If SEO traffic creates leads but not qualified leads, audit keyword intent, internal links, commercial page depth, and CTA paths before creating more content.",
-  },
-  {
-    title: "What to improve when lead cost is too high",
-    body: "Start with the highest-intent pages and channels. Improve buyer-intent targeting, add proof near CTAs, simplify forms, link educational content to commercial pages, and track qualified leads by landing page instead of only total leads.",
+    title: "What to improve when CPM is high",
+    body: "If CPM is high, review audience size, targeting, creative relevance, and placement quality. For B2B campaigns, higher CPM can still be acceptable when the audience is narrow and commercially relevant.",
   },
 ];
 
-export default function LeadCostCalculatorPage() {
+export default function CpmCalculatorPage() {
   return (
     <>
       <Script
-        id="lead-cost-calculator-faq-schema"
+        id="cpm-calculator-faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Script
-        id="lead-cost-calculator-tool-schema"
+        id="cpm-calculator-tool-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
       />
@@ -142,24 +133,24 @@ export default function LeadCostCalculatorPage() {
                 B2B Lead Generation Calculator
               </p>
               <h1 className="mb-5 text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl">
-                Lead Cost Calculator
+                CPM Calculator
               </h1>
               <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl">
-                Calculate cost per lead and cost per qualified lead so your B2B team can judge
-                lead generation by buyer fit, not lead volume alone.
+                Calculate cost per thousand impressions for B2B awareness, demand generation, and
+                paid campaign planning.
               </p>
               <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <a
                   href="#calculator"
                   className="w-full rounded-2xl bg-blue-600 px-7 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 sm:w-auto"
                 >
-                  Calculate lead cost
+                  Calculate CPM
                 </a>
                 <a
-                  href="/b2b-seo-audit/"
+                  href="/roas-calculator/"
                   className="w-full rounded-2xl border border-slate-200 bg-white px-7 py-3.5 text-base font-semibold text-slate-700 transition-colors hover:bg-slate-50 sm:w-auto"
                 >
-                  Audit lead paths first &rarr;
+                  Calculate ROAS &rarr;
                 </a>
               </div>
             </div>
@@ -171,17 +162,17 @@ export default function LeadCostCalculatorPage() {
                 Quick Answer
               </p>
               <h2 className="mb-3 text-xl font-bold text-slate-900">
-                How do you calculate cost per lead?
+                How do you calculate CPM?
               </h2>
               <p className="text-[15px] leading-relaxed text-slate-700">
-                Cost per lead equals total marketing spend divided by the number of leads. For
-                B2B teams, cost per qualified lead is often the more useful number because it
-                shows whether the spend is attracting buyers who match your target market.
+                CPM equals ad spend divided by impressions, multiplied by 1,000. B2B teams should
+                use CPM to compare awareness efficiency, then connect paid reach to clicks, leads,
+                qualified leads, and revenue.
               </p>
             </div>
           </section>
 
-          <LeadCostCalculator />
+          <CpmCalculator />
 
           <section className="border-y border-slate-200 bg-white px-4 py-16 sm:px-6">
             <div className="mx-auto max-w-3xl space-y-10">
@@ -195,15 +186,18 @@ export default function LeadCostCalculatorPage() {
           </section>
 
           <RelatedToolsSection
-            title="Improve the lead generation workflow"
+            title="Connect CPM to campaign outcomes"
             links={[
+              { label: "Calculate ROAS", href: "/roas-calculator/" },
+              { label: "Calculate cost per lead", href: "/lead-cost-calculator/" },
               {
                 label: "Estimate the full B2B lead funnel",
                 href: "/b2b-lead-generation-calculator/",
               },
-              { label: "Audit your lead paths", href: "/b2b-seo-audit/" },
-              { label: "Build a B2B SEO strategy", href: "/b2b-seo-strategy/" },
-              { label: "Explore all B2B SEO tools", href: "/b2b-seo-kit/" },
+              {
+                label: "Explore all lead generation calculators",
+                href: "/b2b-lead-generation-calculators/",
+              },
             ]}
           />
 
@@ -213,9 +207,7 @@ export default function LeadCostCalculatorPage() {
                 <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-blue-600">
                   FAQ
                 </p>
-                <h2 className="text-3xl font-bold text-slate-900">
-                  Lead Cost Calculator Questions
-                </h2>
+                <h2 className="text-3xl font-bold text-slate-900">CPM Calculator Questions</h2>
               </div>
               <div className="space-y-4">
                 {faqs.map((faq) => (
