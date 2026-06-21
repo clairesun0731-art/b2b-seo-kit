@@ -6,16 +6,16 @@ import SiteHeader from "@/components/SiteHeader";
 import AuditGenerator from "./AuditGenerator";
 
 export const metadata: Metadata = {
-  title: "B2B SEO Audit Checklist | Free B2B Website Audit Tool",
+  title: "B2B SEO Audit Generator | Free B2B Website Audit Tool",
   description:
-    "Use this free B2B SEO audit checklist and lightweight B2B website audit tool to review technical SEO, keyword intent, product pages, internal links, and lead paths.",
+    "Run a free B2B SEO audit to identify what to fix first across commercial pages, content strategy, internal links, conversion paths, and AI search visibility.",
   alternates: {
     canonical: "https://www.b2bseokit.com/b2b-seo-audit",
   },
   openGraph: {
-    title: "B2B SEO Audit Checklist | Free B2B Website Audit Tool",
+    title: "B2B SEO Audit Generator | Free B2B Website Audit Tool",
     description:
-      "Use this free B2B SEO audit checklist and lightweight B2B website audit tool to review technical SEO, keyword intent, product pages, internal links, and lead paths.",
+      "Run a free B2B SEO audit to identify what to fix first across commercial pages, content strategy, internal links, conversion paths, and AI search visibility.",
     url: "https://www.b2bseokit.com/b2b-seo-audit",
     siteName: "B2B SEO Kit",
     images: ["/logo.webp"],
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "B2B SEO Audit Checklist | Free B2B Website Audit Tool",
+    title: "B2B SEO Audit Generator | Free B2B Website Audit Tool",
     description:
-      "Use this free B2B SEO audit checklist to review technical SEO, keyword intent, product pages, content gaps, internal links, AI search readiness, and lead conversion paths.",
+      "Run a free B2B website audit for commercial pages, content strategy, internal links, conversion paths, and AI search visibility.",
   },
 };
 
@@ -128,126 +128,166 @@ const faqSchema = {
 
 const auditAreas = [
   {
-    label: "Technical",
-    title: "Technical SEO",
+    label: "Commercial",
+    title: "Commercial page clarity",
     checks: [
-      "Crawlability and indexation status",
-      "Page speed and Core Web Vitals",
-      "Mobile responsiveness",
-      "Canonical tags and duplicate content",
-      "XML sitemap and robots.txt",
+      "Do product, service, solution, and category pages explain who the page is for?",
+      "Can a buyer understand the problem, offer, proof, and next step without returning home?",
+      "Are use cases, specs, proof, comparisons, or FAQs present where buyers hesitate?",
     ],
-    why: "This section works like a B2B technical SEO checklist for crawlability, indexation, Core Web Vitals, canonical tags, sitemap, and robots.txt.",
+    why: "Commercial pages are where B2B SEO becomes pipeline. Thin money pages usually limit both rankings and conversions.",
   },
   {
-    label: "Keywords",
-    title: "Keyword & Intent Mapping",
+    label: "ICP",
+    title: "ICP and buyer intent alignment",
     checks: [
-      "Are high-intent keywords mapped to the right pages?",
-      "Are product and solution pages targeting buying-intent terms?",
-      "Are comparison and integration keywords addressed?",
-      "Are informational keywords going to blog content, not product pages?",
+      "Do priority pages speak to the buyer role, company type, industry, or use case?",
+      "Are awareness, consideration, and decision-stage keywords separated?",
+      "Does each page match the intent behind the search instead of chasing volume only?",
     ],
-    why: "B2B SEO requires different keyword logic at each buyer stage. Mismatched intent wastes effort and misses leads.",
+    why: "B2B keyword volume is often small. Intent and fit matter more than broad traffic.",
   },
   {
-    label: "Product Pages",
-    title: "Product Page SEO",
+    label: "Page Fit",
+    title: "Keyword-to-page fit",
     checks: [
-      "Do product pages target buying-intent keywords in titles and H1s?",
-      "Is there enough depth and proof to support the decision stage?",
-      "Are FAQs and structured data present?",
-      "Are CTAs visible and conversion-focused?",
+      "Are buying-intent keywords mapped to commercial pages instead of generic blog posts?",
+      "Do comparison, alternative, template, and use-case queries have the right page type?",
+      "Are title tags, H1s, and headings aligned with the page job?",
     ],
-    why: "Thin or poorly structured product pages are the most common reason B2B sites get traffic but few leads.",
-  },
-  {
-    label: "Content",
-    title: "Content Gap Analysis",
-    checks: [
-      "Are there pages for each stage of the buyer journey?",
-      "Are comparison and use-case pages present for high-intent queries?",
-      "Are there gaps in topic coverage competitors are filling?",
-      "Is content written for buyers or only for search engines?",
-    ],
-    why: "Content gaps leave high-intent queries unanswered — handing prospects to competitors.",
+    why: "A good B2B website audit checks whether every important keyword has a page that can both rank and convert.",
   },
   {
     label: "Links",
-    title: "Internal Linking",
+    title: "Internal links to money pages",
     checks: [
-      "Do educational blog posts link to relevant product pages?",
-      "Are commercial pages receiving enough internal link authority?",
-      "Are anchor texts descriptive and keyword-relevant?",
-      "Are orphan pages identified and connected?",
+      "Do educational posts link to relevant product, service, category, or solution pages?",
+      "Are underlinked commercial pages connected from guides, FAQs, case studies, and resources?",
+      "Is anchor text descriptive enough for users and search engines?",
     ],
-    why: "Weak internal linking means valuable SEO authority never reaches the commercial pages that need to rank.",
+    why: "Internal linking for B2B SEO should move authority and buyers toward pages that can generate qualified leads.",
+  },
+  {
+    label: "Content",
+    title: "Content gaps across the buyer journey",
+    checks: [
+      "Are there pages for problem, solution, comparison, use-case, and decision-stage searches?",
+      "Does blog content support commercial pages instead of living as disconnected traffic?",
+      "Are missing buyer questions blocking AI search visibility or sales conversations?",
+    ],
+    why: "A B2B content audit should find gaps that affect lead quality, not only gaps that add traffic.",
   },
   {
     label: "Conversion",
-    title: "Lead Conversion Paths",
+    title: "Conversion path quality",
     checks: [
-      "Are CTAs visible on all commercial pages?",
-      "Are form submissions tracked by landing page?",
-      "Is the buyer journey from organic entry to demo/contact clear?",
-      "Do blog posts have relevant CTAs to product or solution pages?",
+      "Are CTAs visible on commercial pages and contextual inside educational content?",
+      "Can visitors move from organic landing page to demo, quote, inquiry, or consultation?",
+      "Are proof and trust signals close to forms and CTAs?",
     ],
-    why: "SEO without conversion tracking is guesswork. B2B SEO should feed qualified leads into a measurable pipeline.",
+    why: "SEO traffic only matters when the right visitors can take the next step.",
+  },
+  {
+    label: "Technical",
+    title: "Technical SEO basics",
+    checks: [
+      "Are priority pages crawlable, indexable, mobile-friendly, and canonicalized correctly?",
+      "Are sitemap, robots.txt, page speed, and duplicate content issues under control?",
+      "Are important pages easy to reach from navigation and internal links?",
+    ],
+    why: "This is not a full crawl, but a free B2B website audit still needs the basics that protect visibility.",
   },
   {
     label: "AI / GEO",
-    title: "AI Search & GEO Readiness",
+    title: "AI search / GEO readiness",
     checks: [
-      "Do pages include concise direct-answer blocks?",
-      "Are headings descriptive and entity-rich?",
-      "Are comparison tables and structured lists present?",
-      "Is FAQ schema implemented on priority pages?",
+      "Do priority pages include concise answers, definitions, FAQs, and comparison sections?",
+      "Are headings and body copy entity-rich enough to explain the company, product, audience, and use case?",
+      "Is FAQ schema or other structured content used where it fits naturally?",
     ],
-    why: "AI search tools like ChatGPT and Perplexity prefer structured, descriptive, citation-ready content. B2B buyers are already using them.",
+    why: "AI SEO audits for B2B should check whether pages are structured enough for answer engines and human buyers.",
   },
 ];
 
 const checklistItems = [
   {
-    category: "Keyword Intent",
+    category: "Homepage",
     items: [
-      "Does each priority page target a clear and specific search intent?",
-      "Are product pages mapped to buying-intent keywords, not informational queries?",
-      "Are comparison or alternative keywords addressed on dedicated pages?",
+      "Does the H1 clearly explain the company category, audience, and outcome?",
+      "Are primary product, service, solution, or category pages easy to reach?",
+      "Is there a clear CTA path for demo, quote, consultation, inquiry, or trial?",
     ],
   },
   {
-    category: "Product & Solution Pages",
+    category: "Service / product pages",
     items: [
-      "Do title tags clearly explain the page value and include a target keyword?",
-      "Are H1s written for buyers, not just search engines?",
-      "Is there a proof section (case studies, numbers, testimonials) on each key page?",
-      "Is a FAQ block with structured data present on priority pages?",
+      "Does each page target a buying-intent keyword or use-case query?",
+      "Are use cases, proof, specs, comparisons, FAQs, and trust signals included?",
+      "Is the CTA specific to the page intent rather than a generic contact button?",
     ],
   },
   {
-    category: "Content & Internal Links",
+    category: "Blog and educational content",
     items: [
-      "Do blog posts link to relevant product or solution pages with descriptive anchor text?",
-      "Are there internal links from high-traffic pages to low-traffic commercial pages?",
-      "Is educational content connected to the next step in the buyer journey?",
+      "Does each post target a clear buyer-stage question or problem?",
+      "Does educational content link to the relevant commercial page?",
+      "Are content gaps mapped across awareness, consideration, and decision stages?",
     ],
   },
   {
-    category: "Conversion Paths",
+    category: "Internal links",
     items: [
-      "Are CTAs visible above the fold on all commercial pages?",
-      "Are form submissions tracked per landing page in Google Analytics or similar?",
-      "Is the path from organic landing → product page → demo/contact clear?",
+      "Do high-traffic posts link to money pages with descriptive anchors?",
+      "Do commercial pages link to supporting guides, FAQs, case studies, or comparisons?",
+      "Are orphan or underlinked product, service, or category pages identified?",
     ],
   },
   {
-    category: "AI Search Readiness",
+    category: "CTAs and lead capture",
     items: [
-      "Are FAQs written in natural language that AI search systems can extract?",
-      "Do pages include a concise summary or direct answer near the top?",
-      "Are comparison tables or structured lists present for high-intent pages?",
+      "Are CTAs visible above the fold and after proof sections?",
+      "Do blog posts include contextual next steps instead of only end-of-post CTAs?",
+      "Are forms short enough for the buyer stage and clear about what happens next?",
     ],
+  },
+  {
+    category: "Analytics / lead tracking",
+    items: [
+      "Are form submissions, demo requests, quote requests, calls, and consultations tracked?",
+      "Can leads be reviewed by landing page and page type?",
+      "Does reporting separate traffic growth from qualified lead generation?",
+    ],
+  },
+  {
+    category: "AI search visibility",
+    items: [
+      "Do priority pages include direct answers, definitions, FAQs, and structured lists?",
+      "Are product, service, company, industry, and use-case entities described clearly?",
+      "Are comparison tables or concise summaries present where buyers evaluate options?",
+    ],
+  },
+];
+
+const websiteTypeAuditCards = [
+  {
+    title: "B2B SaaS",
+    desc: "Review solution pages, feature pages, integrations, comparison content, demo paths, and blog-to-product internal links.",
+  },
+  {
+    title: "B2B services / professional services",
+    desc: "Audit service pages, niche positioning, proof, case studies, consultation CTAs, and educational content that should support inquiries.",
+  },
+  {
+    title: "Manufacturer / exporter",
+    desc: "Check product category pages, specs, certifications, applications, OEM/ODM details, export trust signals, and quote paths.",
+  },
+  {
+    title: "Agency / consultant",
+    desc: "Review service positioning, lead magnets, case studies, process pages, expert proof, and consultation paths by offer.",
+  },
+  {
+    title: "B2B ecommerce",
+    desc: "Audit category pages, product details, filters, schema-ready specs, buying guides, quote or checkout paths, and internal links.",
   },
 ];
 
@@ -363,13 +403,14 @@ export default function B2BSEOAuditPage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 leading-tight mb-5">
-                Free B2B SEO Audit Checklist for Websites That Need{" "}
-                <span className="text-blue-600">More Qualified Leads</span>
+                B2B SEO Audit Generator for finding{" "}
+                <span className="text-blue-600">what to fix first</span>
               </h1>
 
               <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-                Audit your B2B website across technical SEO, keyword targeting, product pages,
-                content gaps, internal links, AI search readiness, and lead conversion paths.
+                Run a free B2B SEO audit for lean teams that need clearer priorities across
+                commercial pages, internal links, content-to-conversion paths, and GEO / AI search
+                visibility.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
@@ -390,13 +431,41 @@ export default function B2BSEOAuditPage() {
               </div>
 
               <p className="text-sm text-slate-500">
-                Built for B2B marketers, SaaS teams, consultants, agencies, manufacturers, and
-                export businesses.
+                No backend, login, AI API, or email gate before the audit output.
               </p>
             </div>
           </section>
 
           <AuditGenerator />
+
+          <section className="px-4 sm:px-6 pb-8">
+            <div className="max-w-4xl mx-auto rounded-3xl border border-blue-100 bg-blue-50 p-6 text-center shadow-sm sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-blue-700 mb-3">
+                Take this audit further
+              </p>
+              <h2 className="text-2xl font-bold text-slate-900 mb-3">
+                Turn your audit priorities into a B2B SEO workflow
+              </h2>
+              <p className="mx-auto mb-6 max-w-2xl text-[15px] leading-relaxed text-slate-600">
+                After you identify what to fix first, map the work into page priorities, keyword
+                groups, internal links, CTAs, and AI search readiness checks.
+              </p>
+              <div className="flex flex-col justify-center gap-3 sm:flex-row">
+                <a
+                  href="/b2b-seo-strategy"
+                  className="rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
+                >
+                  Generate a B2B SEO strategy workflow
+                </a>
+                <a
+                  href="/b2b-seo-kit"
+                  className="rounded-2xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50"
+                >
+                  Explore all free B2B SEO tools
+                </a>
+              </div>
+            </div>
+          </section>
 
           <section className="px-4 sm:px-6 pb-8">
             <div className="max-w-3xl mx-auto">
@@ -436,6 +505,17 @@ export default function B2BSEOAuditPage() {
                 </a>{" "}
                 is a free, practical tool for teams that want to audit their own website — before
                 hiring a B2B SEO agency, starting content production, or launching a new site.
+              </p>
+              <p className="text-slate-600 text-[14px] leading-relaxed border-l-2 border-slate-200 pl-4 mt-4">
+                After you finish the audit, use the{" "}
+                <a href="/b2b-seo-strategy" className="text-blue-600 hover:underline">
+                  B2B SEO Strategy Workflow Generator
+                </a>{" "}
+                to turn the findings into a practical roadmap, or explore all{" "}
+                <a href="/b2b-seo-kit" className="text-blue-600 hover:underline">
+                  free B2B SEO tools
+                </a>{" "}
+                for audits, briefs, templates, keyword mapping, and lead-generation workflows.
               </p>
               <p className="text-slate-600 text-[14px] leading-relaxed border-l-2 border-slate-200 pl-4 mt-4">
                 After the audit, use the{" "}
@@ -493,10 +573,11 @@ export default function B2BSEOAuditPage() {
                   Audit Coverage
                 </p>
                 <h2 className="text-3xl font-bold text-slate-900">
-                  What the B2B SEO Audit Covers
+                  What should a B2B SEO audit include?
                 </h2>
                 <p className="text-slate-600 mt-3 max-w-xl mx-auto text-[15px]">
-                  Seven areas that matter for B2B search visibility and lead generation.
+                  A practical B2B website audit should cover visibility, buyer intent, conversion
+                  paths, and AI search readiness in one workflow.
                 </p>
               </div>
 
@@ -553,10 +634,11 @@ export default function B2BSEOAuditPage() {
                   Checklist Preview
                 </p>
                 <h2 className="text-3xl font-bold text-slate-900">
-                  B2B SEO Audit Checklist: Sample Items
+                  B2B SEO Audit Checklist
                 </h2>
                 <p className="text-slate-600 mt-3 text-[15px]">
-                  A sample of what the full B2B SEO audit checklist includes.
+                  A compact checklist for reviewing the pages and paths that most often affect B2B
+                  rankings, qualified leads, and GEO visibility.
                 </p>
               </div>
 
@@ -588,8 +670,40 @@ export default function B2BSEOAuditPage() {
             </div>
           </section>
 
-          {/* ── 6. Workflow ── */}
+          {/* ── 6. Company Type Audit ── */}
           <section className="py-16 px-4 sm:px-6 bg-white border-y border-slate-200">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-10">
+                <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-2">
+                  Audit by Website Type
+                </p>
+                <h2 className="text-3xl font-bold text-slate-900">
+                  B2B website audit by company type
+                </h2>
+                <p className="text-slate-600 mt-3 max-w-2xl mx-auto text-[15px] leading-relaxed">
+                  The core audit stays the same, but the highest-priority pages change by business
+                  model. Start with the pages closest to qualified leads.
+                </p>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {websiteTypeAuditCards.map((card) => (
+                  <div
+                    key={card.title}
+                    className="rounded-3xl border border-slate-200 bg-[#F8FAFC] p-6 shadow-sm"
+                  >
+                    <h3 className="mb-2 text-[15px] font-semibold text-slate-900">
+                      {card.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-slate-600">{card.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── 7. Workflow ── */}
+          <section className="py-16 px-4 sm:px-6">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-12">
                 <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-2">
@@ -622,8 +736,8 @@ export default function B2BSEOAuditPage() {
             </div>
           </section>
 
-          {/* ── 7. Mini Audit Output Preview ── */}
-          <section className="py-16 px-4 sm:px-6">
+          {/* ── 8. Mini Audit Output Preview ── */}
+          <section className="py-16 px-4 sm:px-6 bg-white border-y border-slate-200">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-10">
                 <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-2">
@@ -689,35 +803,38 @@ export default function B2BSEOAuditPage() {
             eyebrow="Next Steps"
             title="Next steps after your audit"
             links={[
-              { label: "Build a B2B SEO strategy", href: "/b2b-seo-strategy/" },
-              { label: "Create a reusable SEO template", href: "/b2b-seo-template/" },
               {
-                label: "Map your keywords to pages",
-                href: "/b2b-keyword-research-template/",
+                label: "B2B SEO Strategy Workflow Generator",
+                href: "/b2b-seo-strategy",
+              },
+              { label: "Explore free B2B SEO tools", href: "/b2b-seo-kit" },
+              { label: "Create a reusable B2B SEO template", href: "/b2b-seo-template" },
+              {
+                label: "Map keywords with a B2B keyword research template",
+                href: "/b2b-keyword-research-template",
               },
             ]}
           />
 
-          {/* ── 8. CTA Section ── */}
+          {/* ── 9. CTA Section ── */}
           <section className="py-20 px-4 sm:px-6 bg-white border-y border-slate-200">
-            <div className="max-w-2xl mx-auto text-center">
+            <div className="max-w-3xl mx-auto text-center">
               <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-3">
-                Free Early Access
+                Take this audit further
               </p>
               <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                Get the Free B2B SEO Audit Checklist
+                Build the strategy workflow after your audit
               </h2>
               <p className="text-slate-600 text-[15px] leading-relaxed mb-6">
-                Join early access and get the first B2B SEO audit templates, product page
-                checklist, keyword mapping workflow, and AI search readiness checklist when
-                they launch.
+                Use the audit findings to choose page priorities, keyword-to-page mapping,
+                internal links, content briefs, CTAs, and AI search / GEO updates.
               </p>
               <ul className="inline-flex flex-col items-start gap-2 mb-8 text-left">
                 {[
-                  "B2B SEO Audit Checklist",
-                  "Keyword Intent Mapping Template",
-                  "Product Page SEO Checklist",
-                  "AI Search / GEO Readiness Checklist",
+                  "Turn audit gaps into a page roadmap",
+                  "Prioritize commercial pages before low-intent content",
+                  "Connect internal links and CTAs to qualified lead paths",
+                  "Add AI search / GEO checks to the workflow",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-slate-700">
                     <span className="w-4 h-4 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0 text-[10px] font-bold">
@@ -727,23 +844,24 @@ export default function B2BSEOAuditPage() {
                   </li>
                 ))}
               </ul>
-              <div>
+              <div className="flex flex-col justify-center gap-3 sm:flex-row">
                 <a
-                  href={TALLY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-10 py-4 rounded-2xl transition-colors text-base shadow-md"
+                  href="/b2b-seo-strategy"
+                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-2xl transition-colors text-base shadow-md"
                 >
-                  Get the Free Audit Checklist
+                  Generate a B2B SEO strategy workflow
                 </a>
-                <p className="text-slate-400 text-xs mt-4">
-                  Free early access. No spam. Built for practical B2B SEO workflows.
-                </p>
+                <a
+                  href="/b2b-seo-kit"
+                  className="inline-block rounded-2xl border border-slate-200 bg-white px-8 py-4 text-base font-bold text-slate-700 transition-colors hover:bg-slate-50"
+                >
+                  Explore all free B2B SEO tools
+                </a>
               </div>
             </div>
           </section>
 
-          {/* ── 9. FAQ ── */}
+          {/* ── 10. FAQ ── */}
           <section id="faq" className="py-16 px-4 sm:px-6">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-10">

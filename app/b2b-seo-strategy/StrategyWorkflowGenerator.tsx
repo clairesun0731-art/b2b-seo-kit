@@ -14,15 +14,6 @@ const websiteTypes = [
   "Marketplace / listing website",
 ] as const;
 
-const roles = [
-  "Founder / CEO",
-  "Marketing manager",
-  "SEO consultant",
-  "Agency owner",
-  "Revenue / sales team",
-  "Content marketer",
-] as const;
-
 const seoGoals = [
   "Generate qualified leads",
   "Grow organic traffic",
@@ -53,7 +44,6 @@ const contentStages = [
 ] as const;
 
 type WebsiteType = (typeof websiteTypes)[number];
-type Role = (typeof roles)[number];
 type SeoGoal = (typeof seoGoals)[number];
 type Improvement = (typeof improvementOptions)[number];
 type ContentStage = (typeof contentStages)[number];
@@ -434,20 +424,18 @@ function isDirectoryLike(websiteType: WebsiteType) {
 
 function buildActionPlan({
   websiteType,
-  role,
   seoGoal,
-  improvements,
+  primaryImprovement,
   contentStage,
 }: {
   websiteType: WebsiteType;
-  role: Role;
   seoGoal: SeoGoal;
-  improvements: Improvement[];
+  primaryImprovement: Improvement;
   contentStage: ContentStage;
 }) {
   const website = websiteRules[websiteType];
+  const improvements = [primaryImprovement];
   const selectedRules = improvements.map((item) => improvementRules[item]);
-  const founderMode = role === "Founder / CEO";
   const selectedText = improvements.length ? improvements : ["Keyword research" as Improvement];
   const directoryLike = isDirectoryLike(websiteType);
 
@@ -455,9 +443,6 @@ function buildActionPlan({
     website.focus,
     ...goalRules[seoGoal],
     ...stageRules[contentStage],
-    founderMode
-      ? "Keep this weekly and practical: start with the pages closest to revenue or user intent, then improve links and CTAs."
-      : "",
     directoryLike
       ? "For directory or listing-style sites, improve category and listing templates before creating too many standalone blog posts."
       : "",
@@ -482,7 +467,7 @@ function buildActionPlan({
     improvements.includes("Product / service page SEO")
       ? "Product or service pages with weak titles, thin proof, unclear CTAs, or few internal links"
       : "",
-    founderMode ? "The 3-5 pages closest to revenue, user intent, or a qualified next step" : "",
+    "The 3-5 pages closest to revenue, user intent, or a qualified next step",
   ]).slice(0, 8);
 
   const contentPlan = uniqueItems([
@@ -510,7 +495,7 @@ function buildActionPlan({
     ...(improvements.includes("Lead conversion tracking")
       ? improvementRules["Lead conversion tracking"].items
       : []),
-    founderMode ? "Choose one conversion event you can check every week without building a dashboard." : "",
+    "Choose one conversion event you can check every week without building a dashboard.",
   ]).slice(0, 8);
 
   const geoReadiness = uniqueItems([
@@ -523,9 +508,7 @@ function buildActionPlan({
   ]).slice(0, 7);
 
   const thisWeek = uniqueItems([
-    founderMode
-      ? "Pick one revenue or high-intent page and improve it before touching the rest of the site."
-      : "Pick one priority page type and improve the highest-impact page first.",
+    "Pick one priority page type and improve the highest-impact page first.",
     improvements.includes("SEO audit")
       ? "Run a mini audit for indexation, page templates, metadata, internal links, page speed, duplicate or thin content, and conversion paths."
       : "Review one page for keyword intent, internal links, proof, and CTA clarity.",
@@ -562,33 +545,24 @@ function buildActionPlan({
       { title: "Internal Linking Plan", items: internalPlan },
       { title: "Commercial / Conversion Page Fixes", items: conversionFixes },
       { title: "AI Search / GEO Readiness", items: geoReadiness },
-      { title: "This Week’s SEO Action Plan", items: thisWeek },
+      { title: "This Week's SEO Action Plan", items: thisWeek },
       { title: "When to Run an Audit Again", items: auditAgain },
     ],
   };
 }
 
-const defaultImprovements: Improvement[] = [
-  "Keyword research",
-  "SEO audit",
-  "Blog content planning",
-  "Product / service page SEO",
-  "AI search / GEO visibility",
-  "Internal linking",
-];
-
 export default function StrategyWorkflowGenerator() {
   const [websiteType, setWebsiteType] = useState<WebsiteType>("Content / directory website");
-  const [role, setRole] = useState<Role>("Founder / CEO");
   const [seoGoal, setSeoGoal] = useState<SeoGoal>("Improve AI search / GEO visibility");
-  const [improvements, setImprovements] = useState<Improvement[]>(defaultImprovements);
+  const [primaryImprovement, setPrimaryImprovement] =
+    useState<Improvement>("AI search / GEO visibility");
   const [contentStage, setContentStage] = useState<ContentStage>("Many pages but weak structure");
   const [hasGenerated, setHasGenerated] = useState(true);
   const [copied, setCopied] = useState(false);
 
   const actionPlan = useMemo(
-    () => buildActionPlan({ websiteType, role, seoGoal, improvements, contentStage }),
-    [contentStage, improvements, role, seoGoal, websiteType],
+    () => buildActionPlan({ websiteType, seoGoal, primaryImprovement, contentStage }),
+    [contentStage, primaryImprovement, seoGoal, websiteType],
   );
 
   const resultText = useMemo(
@@ -597,8 +571,8 @@ export default function StrategyWorkflowGenerator() {
         "B2B SEO Strategy Workflow",
         "",
         `Website Type: ${websiteType}`,
-        `Role: ${role}`,
         `Main SEO Goal: ${seoGoal}`,
+        `Primary SEO Focus: ${primaryImprovement}`,
         `Current Content Stage: ${contentStage}`,
         "",
         "Selected Priorities",
@@ -610,16 +584,8 @@ export default function StrategyWorkflowGenerator() {
           "",
         ]),
       ].join("\n").trim(),
-    [actionPlan, contentStage, role, seoGoal, websiteType],
+    [actionPlan, contentStage, primaryImprovement, seoGoal, websiteType],
   );
-
-  function toggleImprovement(option: Improvement) {
-    setImprovements((current) =>
-      current.includes(option)
-        ? current.filter((item) => item !== option)
-        : [...current, option],
-    );
-  }
 
   function handleGenerate() {
     setHasGenerated(true);
@@ -673,51 +639,19 @@ export default function StrategyWorkflowGenerator() {
                 onChange={(value) => setWebsiteType(value as WebsiteType)}
               />
               <SelectField
-                label="Your Role"
-                helper="The output changes tone and priority based on who will act on it."
-                value={role}
-                options={roles}
-                onChange={(value) => setRole(value as Role)}
-              />
-              <SelectField
                 label="Main SEO Goal"
                 helper="Pick the business outcome this strategy should support."
                 value={seoGoal}
                 options={seoGoals}
                 onChange={(value) => setSeoGoal(value as SeoGoal)}
               />
-
-              <div>
-                <p className="mb-2 text-sm font-semibold text-slate-800">
-                  What do you want to improve?
-                </p>
-                <p className="mb-3 text-xs leading-relaxed text-slate-500">
-                  Select one or more areas. The plan stays useful even with a single priority.
-                </p>
-                <div className="grid gap-2 sm:grid-cols-2">
-                  {improvementOptions.map((option) => {
-                    const checked = improvements.includes(option);
-                    return (
-                      <label
-                        key={option}
-                        className={`flex cursor-pointer items-start gap-2 rounded-2xl border px-3 py-2.5 text-sm transition ${
-                          checked
-                            ? "border-blue-200 bg-blue-50 text-slate-900"
-                            : "border-slate-200 bg-[#F8FAFC] text-slate-700 hover:bg-slate-50"
-                        }`}
-                      >
-                        <input
-                          type="checkbox"
-                          checked={checked}
-                          onChange={() => toggleImprovement(option)}
-                          className="mt-0.5 h-4 w-4 rounded border-slate-300 text-blue-600"
-                        />
-                        <span>{option}</span>
-                      </label>
-                    );
-                  })}
-                </div>
-              </div>
+              <SelectField
+                label="Primary SEO Focus"
+                helper="Choose the workflow area that needs the clearest next step."
+                value={primaryImprovement}
+                options={improvementOptions}
+                onChange={(value) => setPrimaryImprovement(value as Improvement)}
+              />
 
               <SelectField
                 label="Current Content Stage"
@@ -748,8 +682,7 @@ export default function StrategyWorkflowGenerator() {
                     B2B SEO Strategy Workflow Generator
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                    Rule-based plan for {role.toLowerCase()} working on a{" "}
-                    {websiteType.toLowerCase()}.
+                    Rule-based plan for a {websiteType.toLowerCase()}.
                   </p>
                 </div>
                 <span className="w-fit rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
@@ -799,10 +732,10 @@ export default function StrategyWorkflowGenerator() {
                     rel="noopener noreferrer"
                     className="inline-block rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
                   >
-                    Get the B2B SEO Strategy Checklist — Free
+                    Get the B2B SEO Strategy Checklist - Free
                   </a>
                   <a
-                    href="/b2b-seo-audit/"
+                    href="/b2b-seo-audit"
                     className="mt-4 block text-sm font-semibold text-blue-700 hover:underline"
                   >
                     Not sure where your site stands? Run the B2B SEO Audit first →

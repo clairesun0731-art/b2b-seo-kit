@@ -2,8 +2,6 @@
 
 import { useMemo, useState } from "react";
 
-const TALLY_URL = "https://tally.so/r/pbJK9J";
-
 const websiteTypes = [
   "B2B SaaS",
   "B2B service business",
@@ -793,15 +791,16 @@ export default function AuditGenerator() {
                 </div>
 
                 <div className="rounded-3xl border border-blue-100 bg-blue-50 p-5">
-                  <p className="mb-4 text-sm font-semibold text-slate-900">
-                    Want the full checklist and templates?
+                  <p className="text-xs font-semibold uppercase tracking-widest text-blue-700">
+                    Take this audit further
+                  </p>
+                  <p className="mb-4 mt-2 text-sm font-semibold text-slate-900">
+                    Turn these audit priorities into a practical B2B SEO workflow.
                   </p>
                   <a
-                    href={TALLY_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/b2b-seo-strategy"
                     onClick={() =>
-                      trackEvent("click_audit_checklist_cta", {
+                      trackEvent("click_audit_strategy_cta", {
                         source: "audit_generator",
                         website_type: websiteType,
                         seo_goal: seoGoal,
@@ -810,17 +809,17 @@ export default function AuditGenerator() {
                     }
                     className="inline-block rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
                   >
-                    Get the Free Audit Checklist
+                    Generate a B2B SEO strategy workflow
                   </a>
                   <p className="mt-3 text-xs leading-relaxed text-slate-600">
-                    Includes product page checks, internal linking prompts, conversion path ideas,
-                    and AI search readiness notes.
+                    Use the next workflow to map keywords to pages, improve internal links, plan
+                    content briefs, and connect SEO fixes to qualified leads.
                   </p>
                   <a
-                    href="/b2b-seo-strategy"
+                    href="/b2b-seo-kit"
                     className="mt-4 inline-block text-sm font-semibold text-blue-700 hover:underline"
                   >
-                    Ready to build the strategy? Use the B2B SEO Strategy Workflow →
+                    Explore all free B2B SEO tools →
                   </a>
                 </div>
               </div>

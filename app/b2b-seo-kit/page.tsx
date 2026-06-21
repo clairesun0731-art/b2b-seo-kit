@@ -5,16 +5,16 @@ import SiteHeader from "@/components/SiteHeader";
 import { leadGenerationCalculators, seoTools } from "@/lib/tools";
 
 export const metadata: Metadata = {
-  title: "B2B SEO Tools & Free SEO Toolkit | B2B SEO Kit",
+  title: "B2B SEO Tools: Free Toolkit for Audits & Strategy | B2B SEO Kit",
   description:
-    "Use B2B SEO Kit as a lightweight set of SEO tools for B2B teams to audit websites, plan keywords, create briefs, optimize product pages, and turn traffic into leads.",
+    "Use free B2B SEO tools for audits, strategy workflows, keyword mapping, internal links, commercial page fixes, and lead generation.",
   alternates: {
     canonical: "https://www.b2bseokit.com/b2b-seo-kit",
   },
   openGraph: {
-    title: "B2B SEO Tools & Free SEO Toolkit | B2B SEO Kit",
+    title: "B2B SEO Tools: Free Toolkit for Audits & Strategy | B2B SEO Kit",
     description:
-      "Use B2B SEO Kit as a lightweight set of SEO tools for B2B teams to audit websites, plan keywords, create briefs, optimize product pages, and turn traffic into leads.",
+      "Use free B2B SEO tools for audits, strategy workflows, keyword mapping, internal links, commercial page fixes, and lead generation.",
     url: "https://www.b2bseokit.com/b2b-seo-kit",
     siteName: "B2B SEO Kit",
     images: ["/logo.webp"],
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "B2B SEO Tools & Free SEO Toolkit | B2B SEO Kit",
+    title: "B2B SEO Tools: Free Toolkit for Audits & Strategy | B2B SEO Kit",
     description:
-      "Use B2B SEO Kit to audit B2B websites, plan keyword research, create content briefs, optimize product pages, and turn organic traffic into qualified leads.",
+      "Use free B2B SEO tools to audit B2B websites, plan strategy, map keywords to pages, improve internal links, and turn organic traffic into qualified leads.",
   },
 };
 
@@ -216,8 +216,91 @@ const useCases = [
   },
 ];
 
+const hubToolCopy: Partial<
+  Record<
+    (typeof seoTools)[number]["href"],
+    {
+      label: string;
+      name: string;
+      description: string;
+      cta: string;
+    }
+  >
+> = {
+  "/b2b-seo-audit/": {
+    label: "Audit",
+    name: "B2B SEO Audit Generator",
+    description:
+      "Find what to fix first across technical basics, product and solution pages, internal links, AI search readiness, and lead paths.",
+    cta: "Run the audit first",
+  },
+  "/b2b-seo-strategy/": {
+    label: "Strategy",
+    name: "B2B SEO Strategy Workflow Generator",
+    description:
+      "Turn keyword research into page priorities, content workflows, internal links, commercial page fixes, and conversion paths.",
+    cta: "Build the strategy workflow",
+  },
+  "/b2b-seo-brief-generator/": {
+    label: "Brief",
+    name: "B2B SEO Brief Generator",
+    description:
+      "Create a B2B content brief with search intent, buyer stage, outline, proof points, CTA guidance, and internal link suggestions.",
+    cta: "Create a content brief",
+  },
+  "/b2b-seo-template/": {
+    label: "Template",
+    name: "B2B SEO Template",
+    description:
+      "Generate a practical planning template for page types, keywords, content tasks, internal links, and lead conversion paths.",
+    cta: "Generate the SEO template",
+  },
+  "/b2b-keyword-research-template/": {
+    label: "Keywords",
+    name: "B2B Keyword Research Template",
+    description:
+      "Map B2B keywords by buyer intent, funnel stage, page type, commercial value, and the next conversion step.",
+    cta: "Build a keyword map",
+  },
+};
+
+const leanTeamQuestions = [
+  {
+    question: "What should we fix first?",
+    answer:
+      "Start with issues that block qualified leads: weak commercial pages, mismatched keyword intent, missing CTAs, thin proof sections, and broken internal links from educational content to product or solution pages.",
+  },
+  {
+    question: "Which pages should we build?",
+    answer:
+      "Use buying-intent keywords to decide whether you need product pages, solution pages, comparison pages, templates, use-case pages, or supporting guides instead of sending every keyword to the blog.",
+  },
+  {
+    question: "How do we connect SEO traffic to leads?",
+    answer:
+      "Add clear inquiry paths, contextual CTAs, trust sections, and landing-page-level tracking so traffic from organic search can be tied to form submissions, demos, RFQs, or consultation requests.",
+  },
+  {
+    question: "How do we improve AI search / GEO visibility?",
+    answer:
+      "Add direct answer blocks, descriptive H2s, FAQs, comparison sections, entity-rich product details, and structured page summaries that make your expertise easier for AI search systems to understand and cite.",
+  },
+] as const;
+
 const faqs = faqSchema.mainEntity;
-const kitSeoTools = seoTools.filter((tool) => tool.href !== "/b2b-seo-kit/");
+const hubTools = seoTools
+  .filter((tool) => tool.href !== "/b2b-seo-kit/")
+  .map((tool) => {
+    const copy = hubToolCopy[tool.href];
+
+    return {
+      label: copy?.label ?? tool.shortTitle,
+      name: copy?.name ?? tool.title,
+      href: tool.href.replace(/\/$/, ""),
+      description: copy?.description ?? tool.hubDescription,
+      cta: copy?.cta ?? tool.cta,
+    };
+  });
 const calculatorCluster = leadGenerationCalculators[0];
 const calculatorTools = leadGenerationCalculators.slice(1);
 
@@ -249,18 +332,18 @@ export default function B2BSEOKitPage() {
             <div className="relative max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 text-xs font-medium px-3 py-1.5 rounded-full mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
-                Free Early Access — No Credit Card Required
+                Free B2B SEO Tools - No Login Required
               </div>
 
               <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 leading-tight mb-5">
-                B2B SEO Tools &amp; Free Toolkit for{" "}
-                <span className="text-blue-600">Turning Keywords Into Leads</span>
+                Free B2B SEO tools for lean teams turning{" "}
+                <span className="text-blue-600">search into leads</span>
               </h1>
 
               <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-                B2B SEO Kit helps marketers, founders, consultants, and SaaS teams turn keyword
-                research into SEO audits, content briefs, product page improvements, internal
-                links, and qualified leads.
+                B2B SEO Kit is a free, lightweight toolkit for lean B2B teams. Use it to run SEO
+                audits, build strategy workflows, map keywords to pages, improve commercial pages,
+                strengthen internal links, and connect organic traffic with lead generation.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
@@ -273,10 +356,10 @@ export default function B2BSEOKitPage() {
                   Get the Free B2B SEO Toolkit
                 </a>
                 <a
-                  href="#tools-included"
+                  href="/b2b-seo-audit"
                   className="w-full sm:w-auto bg-white border border-slate-200 text-slate-700 font-semibold px-7 py-3.5 rounded-2xl hover:bg-slate-50 transition-colors text-base"
                 >
-                  See What&apos;s Included
+                  Run the Audit First
                 </a>
               </div>
 
@@ -294,15 +377,14 @@ export default function B2BSEOKitPage() {
                 Quick Answer
               </p>
               <h2 className="text-xl font-bold text-slate-900 mb-3">
-                What Is a B2B SEO Toolkit?
+                What are B2B SEO tools?
               </h2>
               <p className="text-slate-700 leading-relaxed text-[15px] mb-4">
-                A <strong>B2B SEO toolkit</strong> is a set of tools, templates, and checklists
-                that helps B2B teams research keywords, audit websites, plan content, optimize
-                product pages, and connect SEO work to lead generation. Unlike generic SEO tools
-                that surface keyword data without direction, a B2B SEO toolkit gives teams a
-                structured workflow — from keyword research and content briefs to product page
-                optimization, internal linking, and AI search readiness.
+                <strong>B2B SEO tools</strong> should help teams prioritize fixes, map keywords to
+                commercial and educational pages, improve internal links, and connect SEO work with
+                qualified leads. The best tools do more than show keyword data. They help a lean
+                team decide which pages to fix, which pages to build, and how each SEO task supports
+                a real conversion path.
               </p>
               <p className="text-slate-700 leading-relaxed text-[15px] mb-4">
                 For B2B teams, the goal is not only rankings or traffic. The goal is to connect
@@ -327,7 +409,7 @@ export default function B2BSEOKitPage() {
                 to find the highest-priority page, content, and internal linking gaps before
                 working through the full toolkit. For a broader planning flow, use the{" "}
                 <a href="/b2b-seo-strategy" className="text-blue-600 hover:underline">
-                  B2B SEO Strategy Workflow
+                  B2B SEO Strategy Workflow Generator
                 </a>{" "}
                 to turn those gaps into a focused roadmap.
               </p>
@@ -363,7 +445,39 @@ export default function B2BSEOKitPage() {
             </div>
           </section>
 
-          {/* ── 4. Tools Included ── */}
+          {/* ── 4. Lean Team Help ── */}
+          <section className="py-16 px-4 sm:px-6">
+            <div className="max-w-6xl mx-auto">
+              <div className="mb-10 text-center">
+                <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-2">
+                  Practical Workflow
+                </p>
+                <h2 className="text-3xl font-bold text-slate-900">
+                  How B2B SEO Kit helps lean teams
+                </h2>
+                <p className="text-slate-600 mt-3 max-w-2xl mx-auto text-[15px] leading-relaxed">
+                  Small B2B teams do not need another complex dashboard to maintain. They need a
+                  repeatable way to choose the next useful SEO action.
+                </p>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {leanTeamQuestions.map((item) => (
+                  <div
+                    key={item.question}
+                    className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                  >
+                    <h3 className="mb-2 text-[15px] font-semibold text-slate-900">
+                      {item.question}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-slate-600">{item.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ── 5. Tools Included ── */}
           <section id="tools-included" className="py-16 px-4 sm:px-6 bg-white border-y border-slate-200">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-10">
@@ -380,25 +494,25 @@ export default function B2BSEOKitPage() {
               </div>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-                {kitSeoTools.map((t) => (
+                {hubTools.map((tool) => (
                   <div
-                    key={t.title}
+                    key={tool.name}
                     className="bg-[#F8FAFC] border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-col gap-2"
                   >
                     <div className="inline-flex">
                       <span className="text-xs font-semibold uppercase tracking-widest text-blue-600 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-lg">
-                        {t.shortTitle}
+                        {tool.label}
                       </span>
                     </div>
-                    <h3 className="font-semibold text-slate-900 text-[15px]">{t.title}</h3>
+                    <h3 className="font-semibold text-slate-900 text-[15px]">{tool.name}</h3>
                     <p className="text-slate-600 text-sm leading-relaxed">
-                      {t.hubDescription}
+                      {tool.description}
                     </p>
                     <a
-                      href={t.href}
+                      href={tool.href}
                       className="mt-auto pt-2 text-sm font-semibold text-blue-600 hover:underline"
                     >
-                      {t.cta}
+                      {tool.cta}
                     </a>
                   </div>
                 ))}
