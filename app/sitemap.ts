@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routes = [
     { path: "/", priority: 1 },
+    { path: "/blog", priority: 0.75 },
     { path: "/b2b-seo-kit", priority: 0.8 },
     { path: "/b2b-seo-audit", priority: 0.8 },
     { path: "/b2b-seo-strategy", priority: 0.8 },

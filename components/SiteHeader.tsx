@@ -12,7 +12,7 @@ const toolGroups = [
 ] as const;
 
 type SiteHeaderProps = {
-  active?: "tools" | "audit" | "strategy";
+  active?: "tools" | "blog" | "audit" | "strategy";
 };
 
 export default function SiteHeader({ active }: SiteHeaderProps) {
@@ -107,6 +107,16 @@ export default function SiteHeader({ active }: SiteHeaderProps) {
           </div>
 
           <a
+            href="/blog/"
+            className={
+              active === "blog"
+                ? "font-medium text-slate-900"
+                : "transition-colors hover:text-slate-900"
+            }
+          >
+            Blog
+          </a>
+          <a
             href="/b2b-seo-audit/"
             className={
               active === "audit"
@@ -198,6 +208,16 @@ export default function SiteHeader({ active }: SiteHeaderProps) {
               </div>
             ) : null}
 
+            <a
+              href="/blog/"
+              className={
+                active === "blog"
+                  ? "rounded-2xl bg-[#F8FAFC] px-4 py-3 text-sm font-semibold text-slate-900"
+                  : "rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-[#F8FAFC]"
+              }
+            >
+              Blog
+            </a>
             <a
               href="/b2b-seo-audit/"
               className="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-[#F8FAFC]"

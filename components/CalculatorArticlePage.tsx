@@ -168,7 +168,7 @@ export default function CalculatorArticlePage({
       />
 
       <div className="min-h-screen bg-[#F8FAFC] text-slate-900">
-        <SiteHeader active="tools" />
+        <SiteHeader active="blog" />
 
         <main>
           <section className="relative overflow-hidden px-4 pb-14 pt-16 sm:px-6 sm:pt-20">
