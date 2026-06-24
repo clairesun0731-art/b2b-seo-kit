@@ -1,28 +1,36 @@
 import Link from "next/link";
 
-const toolLinks = [
+const kitLinks = [
+  { label: "Home", href: "/" },
+  { label: "B2B SEO Kit", href: "/b2b-seo-kit/" },
+  { label: "About", href: "/about/" },
+  { label: "Contact", href: "mailto:hello@b2bseokit.com" },
+  { label: "Privacy Policy", href: "/privacy/" },
+] as const;
+
+const seoToolLinks = [
   { label: "B2B SEO Audit Generator", href: "/b2b-seo-audit/" },
   { label: "B2B SEO Strategy Workflow Generator", href: "/b2b-seo-strategy/" },
-  { label: "B2B Lead Generation Calculators", href: "/b2b-lead-generation-calculators/" },
-  { label: "Lead Cost Calculator", href: "/lead-cost-calculator/" },
+  { label: "B2B SEO Brief Generator", href: "/b2b-seo-brief-generator/" },
+  { label: "B2B SEO Template Generator", href: "/b2b-seo-template/" },
+  { label: "B2B Keyword Research Template", href: "/b2b-keyword-research-template/" },
+] as const;
+
+const calculatorLinks = [
+  { label: "Lead Generation Calculators", href: "/b2b-lead-generation-calculators/" },
+  { label: "Cost per Lead Calculator", href: "/lead-cost-calculator/" },
   { label: "ROAS Calculator", href: "/roas-calculator/" },
   { label: "CPM Calculator", href: "/cpm-calculator/" },
+  { label: "Website Visitor to Lead Calculator", href: "/b2b-lead-generation-calculator/" },
 ] as const;
 
 const resourceLinks = [
-  { label: "Blog", href: "/blog/" },
-  { label: "How to Calculate Cost per Lead", href: "/how-to-calculate-cost-per-lead/" },
-  { label: "Estimate Leads from Website Traffic", href: "/estimate-leads-from-website-traffic/" },
-  { label: "How to Calculate ROAS", href: "/how-to-calculate-roas/" },
-  { label: "What Is CPM", href: "/what-is-cpm/" },
-] as const;
-
-const kitLinks = [
-  { label: "B2B SEO Kit", href: "/b2b-seo-kit/" },
-  { label: "About", href: "/about/" },
-  { label: "B2B SEO Audit", href: "/b2b-seo-audit/" },
   { label: "B2B SEO Strategy", href: "/b2b-seo-strategy/" },
-  { label: "Privacy", href: "/privacy/" },
+  { label: "B2B SEO Audit", href: "/b2b-seo-audit/" },
+  { label: "B2B Keyword Strategy", href: "/b2b-keyword-research-template/" },
+  { label: "Internal Linking for B2B SEO", href: "/b2b-seo-strategy/" },
+  { label: "AI Search Visibility for B2B", href: "/b2b-seo-kit/" },
+  { label: "Blog", href: "/blog/" },
 ] as const;
 
 function FooterColumn({
@@ -40,7 +48,7 @@ function FooterColumn({
       <div className="grid gap-2.5">
         {links.map((link) => (
           <a
-            key={link.href}
+            key={`${link.label}-${link.href}`}
             href={link.href}
             className="text-sm leading-snug text-slate-500 transition-colors hover:text-slate-900"
           >
@@ -55,25 +63,23 @@ function FooterColumn({
 export default function SiteFooter() {
   return (
     <footer className="border-t border-slate-200 bg-white px-4 py-10 sm:px-6">
-      <div className="mx-auto grid max-w-6xl gap-8 text-sm text-slate-500 sm:grid-cols-2 lg:grid-cols-[1.15fr_1fr_1.1fr_1fr] lg:items-start">
-        <div className="sm:col-span-2 lg:col-span-1">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8 max-w-xl">
           <Link href="/" className="font-semibold text-slate-900 transition-colors hover:text-blue-600">
             B2B SEO Kit
           </Link>
-          <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-500 lg:max-w-xs">
-            Practical SEO tools, templates, and workflows for lean B2B teams.
+          <p className="mt-3 text-sm leading-relaxed text-slate-500">
+            A practical SEO and GEO toolkit for lean B2B teams that need clearer audits,
+            keyword-to-page mapping, internal links, commercial page fixes, and lead paths.
           </p>
-          <a
-            href="mailto:hello@b2bseokit.com"
-            className="mt-4 inline-block text-sm text-slate-500 transition-colors hover:text-slate-900"
-          >
-            hello@b2bseokit.com
-          </a>
         </div>
 
-        <FooterColumn title="Tools" links={toolLinks} />
-        <FooterColumn title="Resources" links={resourceLinks} />
-        <FooterColumn title="B2B SEO Kit" links={kitLinks} />
+        <div className="grid gap-8 text-sm text-slate-500 sm:grid-cols-2 lg:grid-cols-4 lg:items-start">
+          <FooterColumn title="B2B SEO Kit" links={kitLinks} />
+          <FooterColumn title="SEO Tools" links={seoToolLinks} />
+          <FooterColumn title="Lead Generation Calculators" links={calculatorLinks} />
+          <FooterColumn title="Use Cases / Resources" links={resourceLinks} />
+        </div>
       </div>
     </footer>
   );
